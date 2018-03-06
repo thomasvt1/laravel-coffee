@@ -12,13 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('dash');
+    return view('dashboard');
 });
-
-Route::get('/login', function () {
-    return view('login');
-});
-
 
 Auth::routes();
 
