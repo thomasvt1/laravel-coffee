@@ -1,0 +1,9 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
+    "/js/plugins/bootstrap-switch.js": "/js/plugins/bootstrap-switch.js",
+    "/js/plugins/bootstrap-notify.js": "/js/plugins/bootstrap-notify.js",
+    "/js/plugins/chartist.min.js": "/js/plugins/chartist.min.js",
+    "/js/light-bootstrap-dashboard.js": "/js/light-bootstrap-dashboard.js",
+    "/css/light-bootstrap-dashboard.css": "/css/light-bootstrap-dashboard.css"
+}
