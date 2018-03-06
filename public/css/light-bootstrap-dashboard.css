@@ -411,10 +411,10 @@ body>.navbar-collapse .logo p {
 
 .sidebar .logo .simple-text,
 body>.navbar-collapse .logo .simple-text {
-    text-transform: uppercase;
+    font-family: Devonshire;
     padding: 5px 0px;
     display: block;
-    font-size: 18px;
+    font-size: 30px;
     color: #FFFFFF;
     text-align: center;
     font-weight: 400;
@@ -554,10 +554,10 @@ body>.navbar-collapse .logo p {
 
 .sidebar .logo .simple-text,
 body>.navbar-collapse .logo .simple-text {
-    text-transform: uppercase;
+    font-family: Devonshire;
     padding: 5px 0px;
     display: block;
-    font-size: 18px;
+    font-size: 30px;
     color: #FFFFFF;
     text-align: center;
     font-weight: 400;
