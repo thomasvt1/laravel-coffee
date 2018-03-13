@@ -16,7 +16,11 @@ mix.js('resources/assets/js/app.js', 'public/js').sourceMaps()
    .styles([
       'resources/assets/css/light-bootstrap-dashboard.css'
    ], 'public/css/light-bootstrap-dashboard.css')
+   .styles([
+      'resources/assets/css/my-login.css'
+   ], 'public/css/my-login.css')
    .js('resources/assets/js/light-bootstrap-dashboard.js', 'public/js')
    .js('resources/assets/js/plugins/bootstrap-switch.js', 'public/js/plugins')
    .js('resources/assets/js/plugins/chartist.min.js', 'public/js/plugins')
-   .js('resources/assets/js/plugins/bootstrap-notify.js', 'public/js/plugins');
+   .js('resources/assets/js/plugins/bootstrap-notify.js', 'public/js/plugins')
+   .js('resources/assets/js/my-login.js', 'public/js');
