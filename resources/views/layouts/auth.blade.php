@@ -15,7 +15,7 @@
 			<div class="row justify-content-md-center h-100">
 				<div class="card-wrapper" id="app">
 					<div class="brand">
-						<img src="img/logo.jpg">						
+						<img src="{{ asset('images/logo.jpg') }}">						
 					</div>
 					@yield('content')
 				</div>
