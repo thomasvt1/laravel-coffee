@@ -4,6 +4,8 @@
     "/js/plugins/bootstrap-switch.js": "/js/plugins/bootstrap-switch.js",
     "/js/plugins/bootstrap-notify.js": "/js/plugins/bootstrap-notify.js",
     "/js/plugins/chartist.min.js": "/js/plugins/chartist.min.js",
+    "/js/my-login.js": "/js/my-login.js",
     "/js/light-bootstrap-dashboard.js": "/js/light-bootstrap-dashboard.js",
-    "/css/light-bootstrap-dashboard.css": "/css/light-bootstrap-dashboard.css"
+    "/css/light-bootstrap-dashboard.css": "/css/light-bootstrap-dashboard.css",
+    "/css/my-login.css": "/css/my-login.css"
 }
