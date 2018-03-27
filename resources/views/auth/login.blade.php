@@ -4,12 +4,17 @@
     <div class="card fat">
 		<div class="card-body">
 			<h4 class="card-title">Login</h4>
-			<form method="POST">
+			<form method="POST"> action="{{ route('login') }}">
 			 
 				<div class="form-group">
 					<label for="email">E-Mail Address</label>
 
-					<input id="email" type="email" class="form-control" name="email" value="" required autofocus>
+					<input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+					@if ($errors->has('email'))
+                        <span class="invalid-feedback">
+                            <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                    @endif
 				</div>
 
 				<div class="form-group">
@@ -18,19 +23,28 @@
 							Forgot Password?
 						</a>
 					</label>
-					<input id="password" type="password" class="form-control" name="password" required data-eye>
+					<input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+					@if ($errors->has('password'))
+                        <span class="invalid-feedback">
+                            <strong>{{ $errors->first('password') }}</strong>
+                        </span>
+                    @endif
 				</div>
 
-<!-- 								<div class="form-group">
+ 				<div class="form-group">
 					<label>
-						<input type="checkbox" name="remember"> Remember Me
+						<input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
 					</label>
-				</div> -->
+				</div>
 
 				<div class="form-group no-margin">
 					<button type="submit" class="btn btn-primary btn-block">
 						Login
 					</button>
+					
+					<a class="btn btn-link" href="{{ route('password.request') }}">
+                        Forgot Your Password?
+                    </a>
 				</div>
 <!-- 								<div class="margin-top20 text-center">
 					Don't have an account? <a href="register.html">Create One</a>
