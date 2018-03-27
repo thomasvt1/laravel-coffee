@@ -138,7 +138,7 @@
                             </div>
                         </li>
                         <li class="nav-item">
-							@if(Auth::check*())
+							@if(Auth::check())
 								<a href="{{ route('login') }}">Login</a>
 							@else
 								<a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
