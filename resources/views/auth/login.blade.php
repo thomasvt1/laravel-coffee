@@ -4,7 +4,7 @@
     <div class="card fat">
 		<div class="card-body">
 			<h4 class="card-title">Login</h4>
-			<form method="POST"> action="{{ route('login') }}">
+			<form method="POST" action="{{ route('login') }}">
 			 
 				<div class="form-group">
 					<label for="email">E-Mail Address</label>
