@@ -32,7 +32,7 @@
 
 								<div class="form-group">
 									<label for="password">Password</label>
- 									// <input id="password" type="password" class="form-control" name="password" required data-eye>
+ 									{{-- <input id="password" type="password" class="form-control" name="password" required data-eye> --}}
                                     <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
                                     @if ($errors->has('password'))
@@ -42,20 +42,20 @@
                                     @endif
 								</div>
 
-								/* <div class="form-group">
+								{{-- <div class="form-group">
 									<label>
 										<input type="checkbox" name="aggree" value="1"> I agree to the Terms and Conditions
 									</label>
-								</div> */
+								</div> --}}
 
 								<div class="form-group no-margin">
 									<button type="submit" class="btn btn-primary btn-block">
 										Register
 									</button>
 								</div>
-/* 								<div class="margin-top20 text-center">
+{{--								<div class="margin-top20 text-center">
 									Already have an account? <a href="index.html">Login</a>
-								</div> */
+								</div> --}}
 							</form>
 						</div>
 					</div>
