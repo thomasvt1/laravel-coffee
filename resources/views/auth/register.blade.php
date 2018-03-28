@@ -41,7 +41,12 @@
                                         </span>
                                     @endif
 								</div>
+                                <div class="form-group">
+									<label for="password">Confirm password</label>
+                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+								</div>
 
+                                
 								{{-- <div class="form-group">
 									<label>
 										<input type="checkbox" name="aggree" value="1"> I agree to the Terms and Conditions
@@ -60,7 +65,7 @@
 						</div>
 					</div>
 					<div class="footer">
-						Copyright &copy; 2017 &mdash; Your Company 
+						Copyright &copy; 2018 &mdash; Magic Cow 
 					</div>
 				</div>
 @endsection
