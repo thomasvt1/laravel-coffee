@@ -11,14 +11,14 @@
 |
 */
 
-/*Route::get('/', function () {
+Route::get('/', function () {
     return view('dashboard');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');*/
-
+Route::get('/home', 'HomeController@index')->name('dashboard');
+/*
 Route::get('/', function () {
     return view('login');
 });
@@ -28,3 +28,4 @@ Auth::routes();
 Route::get('/home', function () {
     return view('dashboard');
 });
+*/
