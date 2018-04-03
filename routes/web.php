@@ -17,7 +17,10 @@ Route::get('/', function () {
 
 Route::get('/test', function() {
     $users = \App\User::all();
-    return dd($users);
+    //return dd($users);
+    for each $users as $user {
+        echo $user->name . "<br />";
+    }
 });
 
 Auth::routes();
