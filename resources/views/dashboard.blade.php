@@ -2,7 +2,7 @@
 
 @section('content')
     @foreach ($users as $user)
-    <p>This is user {{ $user->id }}</p>
+        <p>This is user {{ $user->id }}</p>
     @endforeach
     <div class="container-fluid">
         <div class="row">
