@@ -17,15 +17,4 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('dashboard');
-/*
-Route::get('/', function () {
-    return view('login');
-});
-
-Auth::routes();
-
-Route::get('/home', function () {
-    return view('dashboard');
-});
-*/
+Route::get('/home', 'HomeController@index')->name('home');
