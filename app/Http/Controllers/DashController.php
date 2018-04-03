@@ -24,6 +24,6 @@ class DashController extends Controller
     public function index()
     {
         $users = \App\User::all();
-        return view('dashboard', ["users", $users]);
+        return view('dashboard', ['users' => $users]);
     }
 }
