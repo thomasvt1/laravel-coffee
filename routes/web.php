@@ -11,19 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
-})->middleware('auth');
-
-Route::get('/test', function() {
-    $users = \App\User::all();
-    //return dd($users);
-    foreach ($users as $user) {
-        echo $user->name . "<br />";
-    }
-    return view('dashboard', ['users' => $users]);
-});
+Route::get('/', 'DashController@index')->name('/');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
