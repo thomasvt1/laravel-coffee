@@ -16,7 +16,7 @@ Route::get('/', function () {
 })->middleware('auth');
 
 Route::get('/test', function() {
-    $users = App/User::all();
+    $users = \App\User::all();
     return dd($users);
 });
 
