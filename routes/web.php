@@ -18,7 +18,7 @@ Route::get('/', function () {
 Route::get('/test', function() {
     $users = \App\User::all();
     //return dd($users);
-    foreach $users as $user {
+    foreach ($users as $user) {
         echo $user->name . "<br />";
     }
 });
