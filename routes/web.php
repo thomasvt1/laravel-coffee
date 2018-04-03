@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('dashboard');
 })->middleware('auth');
 
+Route::get('/test', function() {
+    $users = User::all();
+    return dd($users);
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
