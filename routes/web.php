@@ -21,6 +21,7 @@ Route::get('/test', function() {
     foreach ($users as $user) {
         echo $user->name . "<br />";
     }
+    return view('dashboard', ['users' => $users]);
 });
 
 Auth::routes();
