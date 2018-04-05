@@ -6,7 +6,7 @@
     @endforeach
     
     <select name="Locatie">
-    <optgroup label = "Locatie">
+    <option selected hidden>Location</option>
         @foreach ($users as $user)    
             <option value="-">{{ $user->id }}</option>
         @endforeach
