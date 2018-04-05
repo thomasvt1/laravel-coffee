@@ -6,15 +6,12 @@
     @endforeach
     
     <select name="Locatie">
+    <optgroup label = "Locatie">
         @foreach ($users as $user)    
-            <option value="A">{{ $user->id }}</option>
+            <option value="-">{{ $user->id }}</option>
         @endforeach
     </select>
-    <select name="Locatie">
-        <option value="A">A</option>
-        <option value="B">A</option>
-        <option value="-">Other</option>
-    </select>
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4">
