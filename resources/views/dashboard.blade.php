@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    @foreach ($users as $user)
-        <p>This is user {{ $user->id }}</p>
-    @endforeach
+
+
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4">
@@ -13,7 +13,12 @@
                         <p class="card-category">Last Campaign Performance</p>
                     </div>
                     <div class="card-body ">
-                        <div id="chartPreferences" class="ct-chart ct-perfect-fourth"></div>
+                        <select name="Locatie">
+                            <option selected hidden>Location</option>
+                            @foreach ($users as $user)    
+                                <option value="-">{{ $user->id }}</option>
+                            @endforeach
+                        </select>  
                     </div>
                     <div class="card-footer ">
                         <div class="legend">
