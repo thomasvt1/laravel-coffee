@@ -34,7 +34,7 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li>
+                <!--<li>
                     <a class="nav-link" href="./user.html">
                         <i class="nc-icon nc-circle-09"></i>
                         <p>User Profile</p>
@@ -75,7 +75,7 @@
                         <i class="nc-icon nc-alien-33"></i>
                         <p>Upgrade to PRO</p>
                     </a>
-                </li>
+                </li>-->
             </ul>
         </div>
     </div>
@@ -90,7 +90,7 @@
                     <span class="navbar-toggler-bar burger-lines"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navigation">
-                    <ul class="nav navbar-nav mr-auto">
+                    <!--<ul class="nav navbar-nav mr-auto">
                         <li class="nav-item">
                             <a href="#" class="nav-link" data-toggle="dropdown">
                                 <i class="nc-icon nc-palette"></i>
@@ -117,14 +117,14 @@
                                 <span class="d-lg-block">&nbsp;Search</span>
                             </a>
                         </li>
-                    </ul>
+                    </ul>-->
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="#pablo">
                                 <span class="no-icon">{{ ucfirst(Auth::user()->name) }}</span>
                             </a>
                         </li>
-                        <li class="nav-item dropdown">
+                        <!--<li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="no-icon">Dropdown</span>
                             </a>
@@ -136,7 +136,7 @@
                                 <div class="divider"></div>
                                 <a class="dropdown-item" href="#">Separated link</a>
                             </div>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
 							@if(Auth::check())
 								<a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
