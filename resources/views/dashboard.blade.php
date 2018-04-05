@@ -19,6 +19,18 @@
                                 <option value="-">{{ $user->id }}</option>
                             @endforeach
                         </select>  
+                        <select name="Cup">
+                            <option selected hidden>Cup</option>
+                            @foreach ($users as $user)    
+                                <option value="-">{{ $user->id }}</option>
+                            @endforeach
+                        </select> 
+                        <select name="Preference">
+                            <option selected hidden>Preference</option>
+                            @foreach ($users as $user)    
+                                <option value="-">{{ $user->id }}</option>
+                            @endforeach
+                        </select>                          
                     </div>
                     <div class="card-footer ">
                         <hr>
