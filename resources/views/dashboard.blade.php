@@ -1,9 +1,9 @@
 @extends('layouts.app')
-
+<!--
 @section('content')
     @foreach ($users as $user)
         <p>This is user {{ $user->id }}</p>
-    @endforeach
+    @endforeach -->
     
     <select name="Locatie">
     <option selected hidden>Location</option>
@@ -11,7 +11,26 @@
             <option value="-">{{ $user->id }}</option>
         @endforeach
     </select>
-
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card ">
+                <div class="card-header ">
+                    <h4 class="card-title">Change preference</h4>
+                    <p class="card-category">Here it is possible to change your preference</p>
+                </div>
+                <div class="card-body ">
+                    <select name="Locatie">
+                        <option selected hidden>Location</option>
+                        @foreach ($users as $user)    
+                            <option value="-">{{ $user->id }}</option>
+                        @endforeach
+                    </select>    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4">
