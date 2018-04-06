@@ -15,8 +15,8 @@
                     <div class="card-body ">
                         <select name="Locatie">
                             <option selected hidden>Location</option>
-                            @foreach ($machines as $machine)    
-                                <option value="-">{{ $machine}}</option>
+                            @foreach ($cups as $cup)    
+                                <option value="-">{{ $cup}}</option>
                             @endforeach
                         </select>  
                         <select name="Cup">
