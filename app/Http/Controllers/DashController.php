@@ -25,5 +25,17 @@ class DashController extends Controller
     {
         $users = \App\User::all();
         return view('dashboard', ['users' => $users]);
+        
+        $machines = \App\Machine::all();
+        return view('dashboard', ['machines' => $machines]);
+        
+        $cups = \App\Cup::all();
+        return view('dashboard', ['cups' => $cups]);
+        
+        $drinks = \App\Drink::all();
+        return view('dashboard', ['drinks' => $drinks]);
+        
+        
+        
     }
 }
