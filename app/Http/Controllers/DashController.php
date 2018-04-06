@@ -24,7 +24,10 @@ class DashController extends Controller
     public function index()
     {    
         $cups = \App\Cup::all();
-        return view('dashboard', ['cups' => $cups]);
+        $users = \App\User::all();
+        $machines = \App\Machine::all();
+        $drinks = \App\Drink::all();
+        return view('dashboard', ['cups' => $cups, 'users' => $users, 'machines' => $machines, 'drinks' => $drinks]);
         
         $users = \App\User::all();
         return view('dashboard', ['users' => $users]);
