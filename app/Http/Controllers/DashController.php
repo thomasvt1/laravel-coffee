@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Cup
+use App\Cup;
 
 class DashController extends Controller
 {
