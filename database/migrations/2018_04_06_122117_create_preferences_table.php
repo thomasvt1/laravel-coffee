@@ -15,6 +15,12 @@ class CreatePreferencesTable extends Migration
     {
         Schema::create('preferences', function (Blueprint $table) {
             $table->increments('id');
+			$table->integer('cup_id')->unsigned();
+            $table->foreign('cup_id')->references('id')->on('cup')
+			->onUpdate('cascade')->onDelete('cascade');
+			$table->integer('drink_id')->unsigned();
+            $table->foreign('drink_id')->references('id')->on('drink')
+			->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
