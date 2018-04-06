@@ -15,20 +15,20 @@
                     <div class="card-body ">
                         <select name="Locatie">
                             <option selected hidden>Location</option>
-                            @foreach ($users as $user)    
-                                <option value="-">{{ $user->id }}</option>
+                            @foreach ($machines as $machine)    
+                                <option value="-">{{ $machine->location }}</option>
                             @endforeach
                         </select>  
                         <select name="Cup">
                             <option selected hidden>Cup</option>
-                            @foreach ($users as $user)    
-                                <option value="-">{{ $user->id }}</option>
+                            @foreach ($cups as $cup)    
+                                <option value="-">{{ $cup->id }}</option>
                             @endforeach
                         </select> 
                         <select name="Preference">
                             <option selected hidden>Preference</option>
-                            @foreach ($users as $user)    
-                                <option value="-">{{ $user->id }}</option>
+                            @foreach ($drinks as $drink)    
+                                <option value="-">{{ $drink->name }}</option>
                             @endforeach
                         </select>                          
                     </div>
