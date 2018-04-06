@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCupsTable extends Migration
+class CreatePreferencesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateCupsTable extends Migration
      */
     public function up()
     {
-        Schema::create('cups', function (Blueprint $table) {
+        Schema::create('preferences', function (Blueprint $table) {
             $table->increments('id');
-			$table->integer('volume');
-			$table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')
-			->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -30,6 +26,6 @@ class CreateCupsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cups');
+        Schema::dropIfExists('preferences');
     }
 }
