@@ -48,6 +48,7 @@ class DashController extends Controller
         $preferences->drink_id = 3;
 
         $preferences->save();
+        return view('dashboard', ['cups' => $cups, 'users' => $users, 'machines' => $machines, 'drinks' => $drinks]);
        // id cup_id drink_id
         //$author = Author::findOrFail($id);
        // $author->update($request->all());
