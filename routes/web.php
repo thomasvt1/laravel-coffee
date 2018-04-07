@@ -14,7 +14,7 @@
 Route::get('/', 'DashController@index')->name('/');
 
 Auth::routes();
-Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
-    Route::resource('dash', 'DashController');
-});
+//Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
+Route::resource('dash', 'DashController');
+//});
 
