@@ -43,7 +43,7 @@ class DashController extends Controller
     
     public function update()
     {
-        $preferences = App\Preference::find(1);
+        $preferences = \App\Preference::find(1);
 
         $preferences->drink_id = 3;
 

@@ -33,7 +33,7 @@
                         </select>  
                         
                         <div class="panel-body">
-                            <form action="{{ route('authors.store') }}" method="post">
+                            <form action="{{ route('dash.update') }}" method="post">
                                 {{ csrf_field() }}
                                 <input type="submit" value="Submit" class="btn btn-default" />
                             </form>
