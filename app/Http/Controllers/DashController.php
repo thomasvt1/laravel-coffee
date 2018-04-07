@@ -39,8 +39,18 @@ class DashController extends Controller
         
         $drinks = \App\Drink::all();
         return view('dashboard', ['drinks' => $drinks]);
-        
-        
-        
+    }
+    
+    public function update()
+    {
+        $preferences = App\Preference::find(1);
+
+        $preferences->drink_id = 3;
+
+        $preferences->save();
+       // id cup_id drink_id
+        //$author = Author::findOrFail($id);
+       // $author->update($request->all());
+       // return redirect()->route('authors.index')->with(['message' => 'Author updated successfully']);
     }
 }
