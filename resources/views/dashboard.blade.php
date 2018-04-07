@@ -32,14 +32,13 @@
                             @endforeach
                         </select>  
                         
-                        <form action="{{ route('dash.update'}}" method="post">
-                            <input type="hidden" name="_method" value="PUT">
-                            {{ csrf_field() }}
-
-                            <input type="submit" value="Submit" class="btn btn-default" />
-                        </form>
+                        <div class="panel-body">
+                            <form action="{{ route('authors.store') }}" method="post">
+                                {{ csrf_field() }}
+                                <input type="submit" value="Submit" class="btn btn-default" />
+                            </form>
                         
-                    </div>
+                        </div>
                     <div class="card-footer ">
                         <hr>
                     </div>
