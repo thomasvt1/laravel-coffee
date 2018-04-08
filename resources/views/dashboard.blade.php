@@ -1,3 +1,4 @@
+<?php use App\Http\Controllers\DashController>
 @extends('layouts.app')
 
 @section('content')
@@ -33,7 +34,7 @@
                         </select>  
                         
                         <div class="panel-body">
-                            <form action="{{ route('update') }}" method="post">
+                            <form action={{DashController::update()}}>
                                 {{ csrf_field() }}
                                 <input type="submit" value="Submit" class="btn btn-default" />
                             </form>
