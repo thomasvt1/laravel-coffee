@@ -42,7 +42,7 @@ class DashController extends Controller
     }
     
     
-    public function update()
+    public static function update()
     {
         $preferences = \App\Preference::find(1);
 
