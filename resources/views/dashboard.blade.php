@@ -33,7 +33,7 @@
                         </select>  
                         
                         <div class="panel-body">
-                            <form action="{{ route('DashController.update') }}" method="post">
+                            <form action="{{ route('update') }}" method="post">
                                 {{ csrf_field() }}
                                 <input type="submit" value="Submit" class="btn btn-default" />
                             </form>
