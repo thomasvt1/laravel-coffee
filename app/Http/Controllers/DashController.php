@@ -45,7 +45,7 @@ class DashController extends Controller
     
     public static function update()
     {
-        $preferences = Preference::find(1);
+        $preferences = \App\Preference::find(1);
 
         // Make sure you've got the Page model
         if($preferences) {
