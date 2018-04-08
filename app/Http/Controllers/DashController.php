@@ -46,12 +46,12 @@ class DashController extends Controller
     public static function update()
     {
         return ("yeah");
-         $preferences = \App\Preference::where('id', '=', 1)->get()
+         $preferences = \App\Preference::where('id', '=', 1)->drink_id = 3;
 
         // Make sure you've got the Page model
         //if($preferences) {
-        $preferences->drink_id = 3;
-        $preferences->save();
+        //$preferences->;
+       // $preferences->save();
         //} 
 
     }
