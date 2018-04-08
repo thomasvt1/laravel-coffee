@@ -37,9 +37,7 @@
                             <form action={{DashController::update()}}>
                                 <input type="submit" value="Submit" class="btn btn-default" />
                             </form>
-                            @foreach ($preferences as $preference)    
-                                <p>This is user {{ $preference}}</p>
-                            @endforeach
+
                         
                         </div>
                     <div class="card-footer ">
@@ -54,6 +52,9 @@
                         <p class="card-category">24 Hours performance</p>
                     </div>
                     <div class="card-body ">
+                        @foreach ($preferences as $preference)    
+                            <p>{{ $preference}}</p>
+                        @endforeach
                         <div id="chartHours" class="ct-chart"></div>
                     </div>
                     <div class="card-footer ">
