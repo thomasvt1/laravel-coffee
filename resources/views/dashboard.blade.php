@@ -45,7 +45,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-8">
                 <div class="card ">
                     <div class="card-header ">
                         <h4 class="card-title">Users Behavior</h4>
