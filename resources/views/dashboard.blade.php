@@ -32,11 +32,13 @@
                             @endforeach
                         </select>  
                         
-                        <form method="POST" action="<?php echo $this->action('change_my_attribute'); ?>">
-                            <input type="hidden" name="cID" value="<?php echo $cObj->getCollectionID(); ?>" />
-                            <input type="hidden" name="newValue" value="1" />
-                            <input type="submit" value="Click Here To Change The Thing" />
-                        </form>
+                        <div class="panel-body">
+                            <form action="{{ route('DashController.update') }}" method="post">
+                                {{ csrf_field() }}
+                                <input type="submit" value="Submit" class="btn btn-default" />
+                            </form>
+                        
+                        </div>
                     <div class="card-footer ">
                         <hr>
                     </div>

@@ -14,7 +14,9 @@
 Route::get('/', 'DashController@index')->name('/');
 
 Auth::routes();
+Route::post('update', 'DashController@update');
+//Route::get('insert/{id}','YOUR_CONTROLLER@insert');
 //Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
-Route::resource('dash', 'DashController');
+//Route::resource('dash', 'DashController');
 //});
 

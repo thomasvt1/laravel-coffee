@@ -40,14 +40,9 @@ class DashController extends Controller
         $drinks = \App\Drink::all();
         return view('dashboard', ['drinks' => $drinks]);
     }
-    public function change_my_attribute() {
-    $cID = $this->post('cID');
-    $newValue = $this->post('newValue');
-    $c = Page::getByID($cID);
-    $c->setAttribute(CollectionAttributeKey::getByHandle('my_attribute_handle'), $new_value);
-}
     
-    /*public function update()
+    
+    public function update()
     {
         $preferences = \App\Preference::find(1);
 
@@ -59,5 +54,5 @@ class DashController extends Controller
         //$author = Author::findOrFail($id);
        // $author->update($request->all());
        // return redirect()->route('authors.index')->with(['message' => 'Author updated successfully']);
-    }*/
+    }
 }
