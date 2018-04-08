@@ -49,10 +49,10 @@ class DashController extends Controller
          $preferences = \App\Preference::where('id', '=', 1)->get()
 
         // Make sure you've got the Page model
-        if($preferences) {
+        //if($preferences) {
         $preferences->drink_id = 3;
         $preferences->save();
-        } 
+        //} 
 
     }
 }
