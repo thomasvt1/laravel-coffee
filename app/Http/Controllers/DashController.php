@@ -45,22 +45,14 @@ class DashController extends Controller
     
     public static function update()
     {
-        $preferences = \App\Preference::find(1);
+        return ("yeah");
+/*         $preferences = \App\Preference::find(1);
 
         // Make sure you've got the Page model
         if($preferences) {
         $preferences->drink_id = 3;
         $preferences->save();
-}
-       // $preferences = \App\Preference::find(1);
+        } */
 
-        //$preferences->drink_id = 3;
-
-      //  $preferences->save();
-       // return view('dashboard', ['cups' => $cups, 'users' => $users, 'machines' => $machines, 'drinks' => $drinks]);
-       // id cup_id drink_id
-        //$author = Author::findOrFail($id);
-       // $author->update($request->all());
-       // return redirect()->route('authors.index')->with(['message' => 'Author updated successfully']);
     }
 }
