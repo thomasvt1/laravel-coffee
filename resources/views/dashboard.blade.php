@@ -1,4 +1,4 @@
-<?php use App\Http\Controllers\DashController>
+<?php use App\Http\Controllers\DashController;?>
 @extends('layouts.app')
 
 @section('content')
