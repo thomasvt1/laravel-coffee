@@ -35,7 +35,6 @@
                         
                         <div class="panel-body">
                             <form action={{DashController::update()}}>
-                                {{ csrf_field() }}
                                 <input type="submit" value="Submit" class="btn btn-default" />
                             </form>
                         
