@@ -38,7 +38,7 @@
                             $selectedCup = "value";
                             $selectedPreference = "something";
                             action="{{route('updateName')}}"
-                            <!--action={{DashController::update('this', 'that')}}>-->
+
                                 <input type="submit" value="Submit" class="btn btn-default" />                            
                  
                         </div>
