@@ -32,7 +32,7 @@ class DashController extends Controller
         $users = \App\User::all();
         $machines = \App\Machine::all();
         $drinks = \App\Drink::all();
-        $preferences = \App\Preference::all()->whereIn('cup_id',array_column($cups, 'id'));
+        $preferences = \App\Preference::all()->whereIn('cup_id',($cups, 'id'));
         $user_preferences = \App\Preference::where('cup_id', '=',$cups);
         return view('dashboard', ['cups' => $cups, 'users' => $users, 'machines' => $machines, 'drinks' => $drinks, 'preferences'=>$preferences]);
         
