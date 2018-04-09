@@ -35,7 +35,7 @@
                     </div>
                     <div class="card-body ">
                         @foreach ($preferences as $preference)    
-                            <p>{{ $preference}}</p>
+                            <p>{{ $preference->get('id')}}</p>
                         @endforeach
                         {{ $preferences->pluck('id, drink_id')}}
                     </div>
