@@ -20,8 +20,8 @@
                         {{Form::select('size', array('L' => 'Large', 'S' => 'Small'))}}
                         
                         
-                        $locations = \App\Machine::pluck('location', 'id')                        
-                        {{ Form::select('category_id', $locations) }}
+                        {{$locations = \App\Machine::pluck('location', 'id')                        
+                         Form::select('category_id', $locations) }}
                         
                        <!-- <select id="location">
                             <option selected hidden>Location</option>
