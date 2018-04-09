@@ -45,6 +45,9 @@ class DashController extends Controller
         if ($cup_volume >= $drink_volume){
         //$request->input('cup') $request->input('drink')
         \App\Preference::where('id', '=', $request->input('cup'))->update(array('drink_id' => $request->input('drink')));
+        Session::flash('message', 'Here is your success message');
+        } else {
+            Session::flash('message', 'Here is your error');
         }
         return DashController::index();        // Make sure you've got the Page model
     }

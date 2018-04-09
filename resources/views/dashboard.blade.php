@@ -38,7 +38,7 @@
                             <!--<p>{{ $preference}}</p>-->
                              Cup: {{$preference->cup_id}} preference drink: {{$drinks->firstWhere('id', $preference->drink_id)->name}}<br> 
                         @endforeach
-                        
+                        {{Session::get('success')}}
                     </div>
                 </div>
             </div>
