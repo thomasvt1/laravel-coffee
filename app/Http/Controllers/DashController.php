@@ -45,8 +45,9 @@ class DashController extends Controller
         if ($cup_volume >= $drink_volume){
         //$request->input('cup') $request->input('drink')
         \App\Preference::where('id', '=', $request->input('cup'))->update(array('drink_id' => $request->input('drink')));
-        return back()->with('success', 'User created successfully.');
+        return back()->with('message', 'Preference updated successfully.');
         } else {
+            return back()->with('message', 'Preference is to big for the selected cup.')
         }
         return DashController::index();        // Make sure you've got the Page model
     }

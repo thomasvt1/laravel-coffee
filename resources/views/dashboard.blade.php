@@ -22,7 +22,7 @@
                         {{ Form::select('drink', $drinks->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a drink']) }}
                         <br>
                         {{Form::submit('Submit')}}
-                        
+                        {{Session::get('message')}}
                         {{ Form::close() }}
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                             <!--<p>{{ $preference}}</p>-->
                              Cup: {{$preference->cup_id}} preference drink: {{$drinks->firstWhere('id', $preference->drink_id)->name}}<br> 
                         @endforeach
-                        {{Session::get('success')}}
+                        
                     </div>
                 </div>
             </div>
