@@ -34,19 +34,8 @@ class DashController extends Controller
         $drinks = \App\Drink::all();
         $cups_id = $cups->pluck('id');
         $preferences = \App\Preference::all()->whereIn('cup_id',$cups_id);
-        $user_preferences = \App\Preference::where('cup_id', '=',$cups);
         return view('dashboard', ['cups' => $cups, 'users' => $users, 'machines' => $machines, 'drinks' => $drinks, 'preferences'=>$preferences]);
-        
-        $users = \App\User::all();
-        return view('dashboard', ['users' => $users]);
-        
-        $machines = \App\Machine::all();
-        return view('dashboard', ['machines' => $machines]);
-        
 
-        
-        $drinks = \App\Drink::all();
-        return view('dashboard', ['drinks' => $drinks]);
     }
    
     
