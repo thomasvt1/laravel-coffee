@@ -16,7 +16,7 @@
                     <div class="card-body ">
                     
                     
-                        {{ Form::open(array('url' => 'foo/bar')) }}
+                        {{Form::open(['route' => 'updateName'])}}
                         <select id="Locatie">
                             <option selected hidden>Location</option>
                             @foreach ($machines as $machine)    
