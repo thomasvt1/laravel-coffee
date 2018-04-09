@@ -14,29 +14,28 @@
                         <p class="card-category">Here it is possible to change your preference</p>
                     </div>
                     <div class="card-body ">
-                        <select name="Locatie">
+                        <select id="Locatie">
                             <option selected hidden>Location</option>
                             @foreach ($machines as $machine)    
                                 <option value="-">{{ $machine->location}}</option>
                             @endforeach
                         </select>  
-                        <select name="Cup">
+                        <select id="Cup">
                             <option selected hidden>Cup</option>
                             @foreach ($cups as $cup)    
                                 <option value="-">{{ $cup->id }}</option>
                             @endforeach
                         </select> 
-                        <select name="Preference">
+                        <select id="Preference">                        
                             <option selected hidden>Preference</option>
                             @foreach ($drinks as $drink)    
                                 <option value="-">{{ $drink->name }}</option>
                             @endforeach
                         </select>  
-                        $e = document.getElementById("Cup");
-                        $selectedCup = e.options[e.selectedIndex].text;                        
+                        var e = document.getElementById("Preference");
+                        var strUser = e.options[e.selectedIndex].text;                        
                         <div class="panel-body">
-                            $selectedCup;
-                            $selectedPreference = "something";
+
                             
                             <a action="{{route('updateName')}}" class="btn btn-info btn-sm iframe" >Submit</a>
 
