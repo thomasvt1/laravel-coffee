@@ -20,15 +20,15 @@
                         {{Form::select('size', array('L' => 'Large', 'S' => 'Small'))}}
                         
                         
-                        {{$locations = \App\Machine::pluck('location', 'id')}} 
+                        $locations = \App\Machine::pluck('location', 'id')                        
                         {{ Form::select('category_id', $locations) }}
                         
-                        <select id="location">
+                       <!-- <select id="location">
                             <option selected hidden>Location</option>
                             @foreach ($machines as $machine)    
                                 <option value="-">{{ $machine->location}}</option>
                             @endforeach
-                        </select>  
+                        </select>  -->
                         <select id="cup">
                             <option selected hidden>Cup</option>
                             @foreach ($cups as $cup)    
