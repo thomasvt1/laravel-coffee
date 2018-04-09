@@ -37,7 +37,6 @@
                         @foreach ($preferences as $preference)    
                             <p>{{ $preference}}</p>
                         @endforeach
-                        <div id="chartHours" class="ct-chart"></div>
                     </div>
                 </div>
             </div>
