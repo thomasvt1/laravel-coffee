@@ -36,7 +36,7 @@
                     <div class="card-body ">
                         @foreach ($preferences as $preference)   
                             <!--<p>{{ $preference}}</p>-->
-                             Cup: {{$preference->cup_id}} preference drink: {{$drinks}}<br> 
+                             Cup: {{$preference->cup_id}} preference drink: {{$drinks->pluck($preference->drink_id)}}<br> 
                         @endforeach
                         
                     </div>
