@@ -47,7 +47,7 @@ class DashController extends Controller
     {
         //return "hallo";
         $preferences = \App\Preference::where('id', '=', 1)->update(array('drink_id' => 2));
-        
+        return;
         // Make sure you've got the Page model
         //if($preferences) {
         //$preferences->;
