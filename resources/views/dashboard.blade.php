@@ -38,7 +38,7 @@
                             $selectedCup = "value";
                             $selectedPreference = "something";
                             
-                            <a href="{{route('updateName')}}" class="btn btn-info btn-sm iframe" >Submit</a>
+                            <a action="{{route('updateName')}}" class="btn btn-info btn-sm iframe" >Submit</a>
 
 
                                <!-- <input type="submit" value="Submit" class="btn btn-default" />        -->                    
