@@ -38,10 +38,10 @@
                             $selectedCup = "value";
                             $selectedPreference = "something";
                             
-                            <a href="{{route('updateName')}}" class="btn btn-info btn-sm iframe" >'.$buttonShow.'</a>
+                            <a href="{{route('updateName')}}" class="btn btn-info btn-sm iframe" >Submit</a>
 
 
-                                <input type="submit" value="Submit" class="btn btn-default" />                            
+                               <!-- <input type="submit" value="Submit" class="btn btn-default" />        -->                    
                  
                         </div>
                     <div class="card-footer ">
