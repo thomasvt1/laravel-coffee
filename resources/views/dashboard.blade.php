@@ -16,7 +16,8 @@
                     <div class="card-body ">
                     
                     
-                        {{Form::open(['route' => 'updateName'])}}
+                        <!---{{Form::open(['route' => 'updateName'])}}-->
+                        <form action="{{ route('updateName') }}">
                         <select id="location">
                             <option selected hidden>Location</option>
                             @foreach ($machines as $machine)    
@@ -36,7 +37,8 @@
                             @endforeach
                         </select>  
                         <input type="submit" value="Submit">
-                        {{ Form::close() }}
+                        <!--{{ Form::close() }}-->
+                        </form>
 
 
                         <div class="card-footer ">
