@@ -39,14 +39,6 @@
                         @endforeach
                         <div id="chartHours" class="ct-chart"></div>
                     </div>
-                    <div class="card-footer ">
-                        <div class="legend">
-                            <i class="fa fa-circle text-info"></i> Open
-                            <i class="fa fa-circle text-danger"></i> Click
-                            <i class="fa fa-circle text-warning"></i> Click Second Time
-                        </div>
-                        <hr>
-                    </div>
                 </div>
             </div>
         </div>
