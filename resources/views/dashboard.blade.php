@@ -30,13 +30,13 @@
             <div class="col-md-8">
                 <div class="card ">
                     <div class="card-header ">
-                        <h4 class="card-title">Users Behavior</h4>
-                        <p class="card-category">24 Hours performance</p>
+                        <h4 class="card-title">Users preferences</h4>
+                        <p class="card-category"></p>
                     </div>
                     <div class="card-body ">
                         @foreach ($preferences as $preference)    
-                            <p>{{ $preference}}</p>
-                             Cup: {{$preference->cup_id}} Drink: {{$preference->drink_id}}
+                            <!--<p>{{ $preference}}</p>-->
+                             Cup: {{$preference->cup_id}} preference drink: {{$preference->drink_id}}
                         @endforeach
                         
                     </div>
