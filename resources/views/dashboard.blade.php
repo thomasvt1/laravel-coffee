@@ -14,38 +14,15 @@
                         <p class="card-category">Here it is possible to change your preference</p>
                     </div>
                     <div class="card-body ">
-                    
-                    
+                           
                         {{Form::open(['route' => 'updateName'])}}
-                        {{Form::select('size', array('L' => 'Large', 'S' => 'Small'))}}
-                        
-                        
-                       
-                        
+                          
                         {{ Form::select('location', $machines->pluck('location', 'id'), null, ['class' => 'form-control','placeholder' => 'Pick a location']) }}
                         {{ Form::select('cup', $cups->pluck('id', 'id'), null, ['class' => 'form-control','placeholder' => 'Pick a cup']) }}
                         {{ Form::select('drink', $drinks->pluck('name', 'id'), null, ['class' => 'form-control','placeholder' => 'Pick a drink']) }}
                         
-
-                        <!--<select id="location">
-                            <option selected hidden>Location</option>
-                            @foreach ($machines as $machine)    
-                                <option value="-">{{ $machine->location}}</option>
-                            @endforeach
-                        </select>
-                        <select id="cup">
-                            <option selected hidden>Cup</option>
-                            @foreach ($cups as $cup)    
-                                <option value="-">{{ $cup->id }}</option>
-                            @endforeach
-                        </select> 
-                        <select id="preference">                        
-                            <option selected hidden>Preference</option>
-                            @foreach ($drinks as $drink)    
-                                <option value="-">{{ $drink->name }}</option>
-                            @endforeach
-                        </select>  -->
                         {{Form::submit('Submit')}}
+                        
                         {{ Form::close() }}
 
 
