@@ -3,8 +3,6 @@
 
 @section('content')
 
-$dashcontroller = new DashController();
-
 
 
     <div class="container-fluid">
@@ -38,7 +36,7 @@ $dashcontroller = new DashController();
                         <div class="panel-body">
                             $selectedCup = "value";
                             $selectedPreference = "something";
-                            <form action={{$dashcontroller->update($selectedCup, $selectedPreference)}}>
+                            <form action={{DashController::update($selectedCup, $selectedPreference)}}>
                                 <input type="submit" value="Submit" class="btn btn-default" />                            
                                 <!--$e = document.getElementById("Cup");
                                 $selectedCup = e.options[e.selectedIndex].text;-->
