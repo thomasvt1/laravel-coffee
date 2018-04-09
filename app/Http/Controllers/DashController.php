@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DashController extends Controller
 {
@@ -27,7 +28,7 @@ class DashController extends Controller
     App\SomeModel::where('abc', 'a')->orWhere('abc', 'b')->orWhere('abc', 'c')->get();
     DB::table('users')->where('name', 'John')->value('email');
     DB::table('users')->where('name', 'John'); */
-        $cups = \App\Cup::where('user_id', '=', middleware('Auth')::user()->id);
+        $cups = \App\Cup::where('user_id', '=', Auth::user()->id);
         $users = \App\User::all();
         $machines = \App\Machine::all();
         $drinks = \App\Drink::all();
