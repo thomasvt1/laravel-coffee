@@ -32,10 +32,10 @@
                                 <option value="-">{{ $drink->name }}</option>
                             @endforeach
                         </select>  
-                        <!--$e = document.getElementById("Cup");
-                        $selectedCup = e.options[e.selectedIndex].text;-->                          
+                        $e = document.getElementById("Cup");
+                        $selectedCup = e.options[e.selectedIndex].text;                        
                         <div class="panel-body">
-                            $selectedCup = "value";
+                            $selectedCup;
                             $selectedPreference = "something";
                             
                             <a action="{{route('updateName')}}" class="btn btn-info btn-sm iframe" >Submit</a>
