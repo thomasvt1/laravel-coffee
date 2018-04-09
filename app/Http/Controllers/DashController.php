@@ -42,9 +42,10 @@ class DashController extends Controller
         
         $cup_volume = $cups->firstWhere('id', $request->input('cup'))->volume;
         $drink_volume = $drinks->firstWhere('id', $request->input('drink'))->volume;
-        
+        @if ($cup_volume >= $drink_volume)
         //$request->input('cup') $request->input('drink')
         \App\Preference::where('id', '=', $request->input('cup'))->update(array('drink_id' => $request->input('drink')));
+        @endif
         return DashController::index();        // Make sure you've got the Page model
     }
 }
