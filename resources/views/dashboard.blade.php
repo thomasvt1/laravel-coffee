@@ -32,9 +32,10 @@
                                 <option value="-">{{ $drink->name }}</option>
                             @endforeach
                         </select>  
-                        var e = document.getElementById("Preference");
-                        var strUser = e.options[e.selectedIndex].text;                        
-                        <div class="panel-body">
+                        <div var e = document.getElementById("Preference");
+                            var strUser = e.options[e.selectedIndex].text;     
+                        
+                        
 
                             
                             <a action="{{route('updateName')}}" class="btn btn-info btn-sm iframe" >Submit</a>
@@ -43,8 +44,9 @@
                                <!-- <input type="submit" value="Submit" class="btn btn-default" />        -->                    
                  
                         </div>
-                    <div class="card-footer ">
-                        <hr>
+                        <div class="card-footer ">
+                            <hr>
+                        </div>
                     </div>
                 </div>
             </div>
