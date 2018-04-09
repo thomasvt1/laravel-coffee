@@ -34,8 +34,11 @@
                         </select>  
                         
                         <div class="panel-body">
-                            <form action={{DashController::update()}}>
-                                <input type="submit" value="Submit" class="btn btn-default" />
+
+                            <form action={{DashController::update($selectedCup, $selectedPreference)}}>
+                                <input type="submit" value="Submit" class="btn btn-default" />                            
+                                $e = document.getElementById("Cup");
+                                $selectedCup = e.options[e.selectedIndex].text;
                             </form>
 
                         
