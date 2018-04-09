@@ -23,6 +23,7 @@
                        
                         
                         {{ Form::select('location', $machines->pluck('location', 'id'), null, ['class' => 'form-control','placeholder' => 'Pick a location...']) }}
+                        {{ Form::select('cup', $cups->pluck('id', 'id'), null, ['class' => 'form-control','placeholder' => 'Pick a location...']) }}
                         
                        
                         {{ Form::select('drink', $drinks->pluck('name', 'id'), null, ['class' => 'form-control','placeholder' => 'Pick a drink...']) }}
