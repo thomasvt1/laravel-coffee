@@ -22,7 +22,7 @@
                         
                        
                         
-                        {{ Form::select('category_id', $machines::pluck('location', 'id')) }}
+                        {{ Form::select('category_id', $machines->pluck('location', 'id')) }}
                         
                         <!--<select id="location">
                             <option selected hidden>Location</option>
