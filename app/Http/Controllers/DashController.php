@@ -43,7 +43,7 @@ class DashController extends Controller
     }
     
     
-    public static function update()
+    public function update()
     {
         //return "hallo";
         $preferences = \App\Preference::where('id', '=', 1)->update(array('drink_id' => 1));
