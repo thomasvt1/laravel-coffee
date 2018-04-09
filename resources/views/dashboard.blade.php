@@ -37,10 +37,7 @@
                         <div class="panel-body">
                             $selectedCup = "value";
                             $selectedPreference = "something";
-                            <a action="{{route('updateName')}}">Link name/Embedded Button</a>
-
-
-                                <input type="submit" value="Submit" class="btn btn-default" />                            
+                            <input action="{{route('updateName')}}">type="submit" value="Submit" class="btn btn-default" />                            
                  
                         </div>
                     <div class="card-footer ">
