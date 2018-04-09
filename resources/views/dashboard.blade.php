@@ -35,6 +35,7 @@
                                 <option value="-">{{ $drink->name }}</option>
                             @endforeach
                         </select>  
+                        <input type="submit" value="Submit">
                         {{ Form::close() }}
 
 
