@@ -37,6 +37,13 @@ class DashController extends Controller
     
     public function update(Request $request)
     {
+        //of gekozen drank volume <= gekozen cup volume
+        //$cup_volume = \App\Cup::where('cup_id', '=', $request->input('cup');
+        
+        
+        $volume = $drinks->firstWhere('id', $request->input('drink')->volume;
+        
+        $request->input('cup') $request->input('drink')
         \App\Preference::where('id', '=', $request->input('cup'))->update(array('drink_id' => $request->input('drink')));
         return DashController::index();        // Make sure you've got the Page model
     }
