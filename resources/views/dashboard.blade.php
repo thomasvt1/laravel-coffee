@@ -17,19 +17,19 @@
                     
                     
                         {{Form::open(['route' => 'updateName'])}}
-                        <select id="Locatie">
+                        <select id="location">
                             <option selected hidden>Location</option>
                             @foreach ($machines as $machine)    
                                 <option value="-">{{ $machine->location}}</option>
                             @endforeach
                         </select>  
-                        <select id="Cup">
+                        <select id="cup">
                             <option selected hidden>Cup</option>
                             @foreach ($cups as $cup)    
                                 <option value="-">{{ $cup->id }}</option>
                             @endforeach
                         </select> 
-                        <select id="Preference">                        
+                        <select id="preference">                        
                             <option selected hidden>Preference</option>
                             @foreach ($drinks as $drink)    
                                 <option value="-">{{ $drink->name }}</option>
