@@ -37,7 +37,11 @@
                         <div class="panel-body">
                             $selectedCup = "value";
                             $selectedPreference = "something";
-                            <input action="{{route('updateName')}}">type="submit" value="Submit" class="btn btn-default" />                            
+                            
+                            <a href="{{route('updateName')}}" class="btn btn-info btn-sm iframe" >'.$buttonShow.'</a>
+
+
+                                <input type="submit" value="Submit" class="btn btn-default" />                            
                  
                         </div>
                     <div class="card-footer ">
