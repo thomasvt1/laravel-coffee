@@ -40,7 +40,7 @@ class DashController extends Controller
         //of gekozen drank volume <= gekozen cup volume
         //$cup_volume = \App\Cup::where('cup_id', '=', $request->input('cup');
         
-        $cup_volume = \App\Cup::where('id', $request->input('cup'))->value'volume';
+        $cup_volume = \App\Cup::where('id', $request->input('cup'))->value('volume');
         $drink_volume = \App\Drink::where('id', $request->input('drink'))->volume;
         if ($cup_volume >= $drink_volume){
         //$request->input('cup') $request->input('drink')
