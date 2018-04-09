@@ -37,7 +37,7 @@
                         @foreach ($preferences as $preference)    
                             <p>{{ $preference}}</p>
                         @endforeach
-                        {{ $preference->pluck('id')}}
+                        {{ $preferences->pluck('id')}}
                     </div>
                 </div>
             </div>
