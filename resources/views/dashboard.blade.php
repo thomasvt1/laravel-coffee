@@ -20,7 +20,7 @@
                         {{Form::select('size', array('L' => 'Large', 'S' => 'Small'))}}
                         
                         
-                        $locations = Machine::lists('location', 'id'); 
+                        {{$locations = Machine::lists('location', 'id')}} 
                         {{ Form::select('category_id', $locations) }}
                         
                         <select id="location">
