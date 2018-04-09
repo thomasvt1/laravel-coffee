@@ -18,8 +18,8 @@
                         {{Form::open(['route' => 'updateName'])}}
                           
                         {{ Form::select('location', $machines->pluck('location', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a location']) }}
-                        {{ Form::select('cup', $cups->pluck('id', 'id'), null, ['class' => 'form-control','placeholder' => 'Pick a cup']) }}
-                        {{ Form::select('drink', $drinks->pluck('name', 'id'), null, ['class' => 'form-control','placeholder' => 'Pick a drink']) }}
+                        {{ Form::select('cup', $cups->pluck('id', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a cup']) }}
+                        {{ Form::select('drink', $drinks->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a drink']) }}
                         
                         {{Form::submit('Submit')}}
                         
