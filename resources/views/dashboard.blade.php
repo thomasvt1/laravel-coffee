@@ -35,7 +35,7 @@
                         <div var e = document.getElementById("Preference");
                             var strUser = e.options[e.selectedIndex].text;     
                         
-                        
+                            <p strUser</p>
 
                             
                             <a action="{{route('updateName')}}" class="btn btn-info btn-sm iframe" >Submit</a>
