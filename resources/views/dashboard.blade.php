@@ -20,11 +20,9 @@
                         {{Form::select('size', array('L' => 'Large', 'S' => 'Small'))}}
                         
                         
-                        {{Form::select('location', array(
-                            @foreach ($machines as $machine)    
-                                {{ $machine->location}}=>{{ $machine->location}},
-                            @endforeach
-                        ))}}
+                        $locations = Machine::lists('location', 'id'); 
+                        {{ Form::select('category_id', $locations) }}
+                        
                         <select id="location">
                             <option selected hidden>Location</option>
                             @foreach ($machines as $machine)    
