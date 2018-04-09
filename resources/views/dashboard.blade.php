@@ -46,9 +46,6 @@
                             <i class="fa fa-circle text-warning"></i> Click Second Time
                         </div>
                         <hr>
-                        <div class="stats">
-                            <i class="fa fa-history"></i> Updated 3 minutes ago
-                        </div>
                     </div>
                 </div>
             </div>
