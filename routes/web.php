@@ -14,7 +14,8 @@
 Route::get('/', 'DashController@index')->name('/');
 
 Auth::routes();
-Route::group(['namespace' => 'DashController',], function () {
-Route::post('/',['as'=>'Dashcontroller.update', 'uses'=>'DashController@update']);
+Route::post('/', 'DashController@method')->name('create' => 'updateName');
+//Route::group(['namespace' => 'DashController',], function () {
+//Route::post('/',['as'=>'Dashcontroller.update', 'uses'=>'DashController@update']);
 });
 

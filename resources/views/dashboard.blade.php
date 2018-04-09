@@ -32,17 +32,15 @@
                                 <option value="-">{{ $drink->name }}</option>
                             @endforeach
                         </select>  
-                        
+                        <!--$e = document.getElementById("Cup");
+                        $selectedCup = e.options[e.selectedIndex].text;-->                          
                         <div class="panel-body">
                             $selectedCup = "value";
                             $selectedPreference = "something";
-                            <form action={{DashController::update('this', 'that')}}>
+                            action="{{route('updateName')}}"
+                            <!--action={{DashController::update('this', 'that')}}>-->
                                 <input type="submit" value="Submit" class="btn btn-default" />                            
-                                <!--$e = document.getElementById("Cup");
-                                $selectedCup = e.options[e.selectedIndex].text;-->
-                            </form>
-
-                        
+                 
                         </div>
                     <div class="card-footer ">
                         <hr>
