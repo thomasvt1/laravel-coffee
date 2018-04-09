@@ -45,7 +45,7 @@ class DashController extends Controller
         if ($cup_volume >= $drink_volume){
         //$request->input('cup') $request->input('drink')
         \App\Preference::where('id', '=', $request->input('cup'))->update(array('drink_id' => $request->input('drink')));
-        return"done";
+        return back()->with('success', 'User created successfully.');
         } else {
         }
         return DashController::index();        // Make sure you've got the Page model
