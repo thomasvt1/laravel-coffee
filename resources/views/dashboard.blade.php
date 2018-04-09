@@ -25,7 +25,7 @@
                         {{ Form::select('location', $machines->pluck('location', 'id'), null, ['class' => 'form-control','placeholder' => 'Pick a location...']) }}
                         
                        
-                        {{ Form::select('drink', $drink->pluck('name', 'id'), null, ['class' => 'form-control','placeholder' => 'Pick a drink...']) }}
+                        {{ Form::select('drink', $drinks->pluck('name', 'id'), null, ['class' => 'form-control','placeholder' => 'Pick a drink...']) }}
                         
 
                         <!--<select id="location">
