@@ -24,27 +24,28 @@
                         
                         {{ Form::select('location', $machines->pluck('location', 'id'), null, ['class' => 'form-control','placeholder' => 'Pick a location...']) }}
                         
-                        {{ Form::select('cup', $cups->pluck('cup', 'id'), null, ['class' => 'form-control','placeholder' => 'Pick a cup...']) }}
-
+                       
+                        {{ Form::select('drink', $drink->pluck('name', 'id'), null, ['class' => 'form-control','placeholder' => 'Pick a drink...']) }}
+                        
 
                         <!--<select id="location">
                             <option selected hidden>Location</option>
                             @foreach ($machines as $machine)    
                                 <option value="-">{{ $machine->location}}</option>
                             @endforeach
-                        </select>  
+                        </select>  -->
                         <select id="cup">
                             <option selected hidden>Cup</option>
                             @foreach ($cups as $cup)    
                                 <option value="-">{{ $cup->id }}</option>
                             @endforeach
-                        </select> -->
-                        <select id="preference">                        
+                        </select> 
+                        <!--<select id="preference">                        
                             <option selected hidden>Preference</option>
                             @foreach ($drinks as $drink)    
                                 <option value="-">{{ $drink->name }}</option>
                             @endforeach
-                        </select>  
+                        </select>  -->
                         {{Form::submit('Submit')}}
                         {{ Form::close() }}
 
