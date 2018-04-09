@@ -43,7 +43,7 @@ class DashController extends Controller
     }
     
     
-    public function update($selectedCup, $selectedPreference)
+    public static function update($selectedCup, $selectedPreference)
     {
         return array($selectedCup, $selectedPreference);
         $preferences = \App\Preference::where('id', '=', 1)->update(array('drink_id' => 2));
