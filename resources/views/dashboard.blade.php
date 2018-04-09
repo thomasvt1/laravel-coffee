@@ -7,7 +7,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-6">
                 <div class="card ">
                     <div class="card-header ">
                         <h4 class="card-title">Change preference</h4>
@@ -22,7 +22,7 @@
                         
                        
                         
-                        {{ Form::select('location', $machines->pluck('location', 'id'), null, ['class' => 'form-control','placeholder' => 'Pick a location...']) }}
+                        {{ Form::select('location', $machines->pluck('location', 'id'), null, ['class' => 'form-control margin', 'disabled', 'selected']) }}
                         
                         <!--<select id="location">
                             <option selected hidden>Location</option>
