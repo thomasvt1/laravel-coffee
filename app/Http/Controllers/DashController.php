@@ -45,8 +45,9 @@ class DashController extends Controller
     
     public function update(Request $request)
     {
-        return $request->all();
-        $preferences = \App\Preference::where('id', '=', 1)->update(array('drink_id' => $request->input('drink')));
+        $preferences = \App\Preference;
+        $preferences::where('id', '=', 1)->update(array('drink_id' => $request->input('drink')));
+        //return $request->all();
         return DashController::index();        // Make sure you've got the Page model
         //if($preferences) {
         //$preferences->;
