@@ -23,7 +23,7 @@
                        
                         
                         {{ Form::select('location', $machines->pluck('location', 'id'), null, ['class' => 'form-control','placeholder' => 'Pick a location...']) }}
-                        , null, ['class' => 'form-control margin', 'disabled', 'selected']
+                        
                         <!--<select id="location">
                             <option selected hidden>Location</option>
                             @foreach ($machines as $machine)    
