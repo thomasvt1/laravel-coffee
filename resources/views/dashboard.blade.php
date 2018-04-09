@@ -24,11 +24,6 @@
                         {{Form::submit('Submit')}}
                         
                         {{ Form::close() }}
-
-
-                        <div class="card-footer ">
-                            <hr>
-                        </div>
                     </div>
                 </div>
             </div>
