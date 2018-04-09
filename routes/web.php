@@ -15,7 +15,6 @@ Route::get('/', 'DashController@index')->name('/');
 
 Auth::routes();
 Route::post('/','DashController@method')->name('updateName');
-//Route::group(['namespace' => 'DashController',], function () {
-//Route::post('/',['as'=>'Dashcontroller.update', 'uses'=>'DashController@update']);
-});
+
+);
 
