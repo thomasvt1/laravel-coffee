@@ -36,7 +36,7 @@
                     <div class="card-body ">
                         @foreach ($preferences as $preference)   
                             <!--<p>{{ $preference}}</p>-->
-                             Cup: {{$preference->cup_id}} preference drink: {{$drinks->firstWhere('id', $preference->drink_id)->'name'}}<br> 
+                             Cup: {{$preference->cup_id}} preference drink: {{$drinks->firstWhere('id', $preference->drink_id)->name}}<br> 
                         @endforeach
                         
                     </div>
