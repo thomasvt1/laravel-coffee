@@ -14,6 +14,9 @@
                         <p class="card-category">Here it is possible to change your preference</p>
                     </div>
                     <div class="card-body ">
+                    
+                    
+                        {{ Form::open(array('url' => 'foo/bar')) }}
                         <select id="Locatie">
                             <option selected hidden>Location</option>
                             @foreach ($machines as $machine)    
@@ -32,18 +35,9 @@
                                 <option value="-">{{ $drink->name }}</option>
                             @endforeach
                         </select>  
-                        <div var e = document.getElementById("Preference");
-                            var strUser = e.options[e.selectedIndex].text;     
-                        
-                            <p strUser</p>
-
-                            
-                            <a action="{{route('updateName')}}" class="btn btn-info btn-sm iframe" >Submit</a>
+                        {{ Form::close() }}
 
 
-                               <!-- <input type="submit" value="Submit" class="btn btn-default" />        -->                    
-                 
-                        </div>
                         <div class="card-footer ">
                             <hr>
                         </div>
