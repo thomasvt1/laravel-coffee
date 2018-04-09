@@ -22,7 +22,7 @@
                         
                        
                         
-                        {{ Form::select('category_id', $machines->pluck('location', 'id')) }}
+                        {{ Form::select('location', $machines->pluck('location', 'id') null, ['placeholder' => 'Pick a size...']) }}
                         
                         <!--<select id="location">
                             <option selected hidden>Location</option>
