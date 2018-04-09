@@ -23,7 +23,7 @@ class DashController extends Controller
      */
     public function index()
     {    
-        $cups = \App\Cup::all();
+        $cups = \App\Cup::where('user_id', '=', {{ (Auth::user()->id) }});
         $users = \App\User::all();
         $machines = \App\Machine::all();
         $drinks = \App\Drink::all();
@@ -41,7 +41,7 @@ class DashController extends Controller
         $drinks = \App\Drink::all();
         return view('dashboard', ['drinks' => $drinks]);
     }
-    
+   
     
     public function update(Request $request)
     {
