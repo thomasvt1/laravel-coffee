@@ -20,7 +20,7 @@
                         {{ Form::select('location', $machines->pluck('location', 'id'), null, ['hidden', 'class' => 'form-control','placeholder' => 'Pick a location']) }}
                         {{ Form::select('cup', $cups->pluck('id', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a cup']) }}
                         {{ Form::select('drink', $drinks->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a drink']) }}
-                        <img src="{{ echo asset('storage/coffee.png') }}" height="30px" width="30px">
+                        <img src="/storage\app\public{{ $coffee['image'] }}" height="30px" width="30px" />
                         <br>
                         {{Form::submit('Submit')}}<br>
                         {{Session::get('message')}}
