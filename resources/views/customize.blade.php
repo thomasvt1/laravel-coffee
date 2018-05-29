@@ -7,14 +7,14 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <div class="card ">
                     <div class="card-header ">
-                        <h4 class="card-title">Change preference</h4>
-                        <p class="card-category">Here it is possible to change your preference</p>
+                        <h4 class="card-title">Name mug</h4>
+                        <p class="card-category">Change the name of your mug</p>
                     </div>
+                    
                     <div class="card-body ">
-                           
                         {{Form::open(['route' => 'updateName'])}}
                           
                         {{ Form::select('cup', $user_cups->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a cup']) }}
@@ -25,9 +25,7 @@
                         <br>
                         {{Session::get('message')}}
                         {{ Form::close() }}
-                        
-
-                        
+                           
                     </div>
                 </div>
             </div>
