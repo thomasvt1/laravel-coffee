@@ -24,7 +24,6 @@
                         {
                             return '<input type="awesome">';
                         }) }}
-                        {{ Form::myField() }}
                         {{Form::submit('Submit')}}
                         {{Session::get('message')}}
                         {{ Form::close() }}
