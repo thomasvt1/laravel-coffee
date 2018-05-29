@@ -24,6 +24,7 @@
                         <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
                         
                         {{Form::number('name', 'value',['min'=>1,'max'=>5])}}
+                        <script>
 $(function() {
     var hash = window.location.hash;
 
@@ -42,6 +43,7 @@ $(function() {
     $( "#amount" ).val( $( "#slider-range" ).slider( "values", 0 ) +
     " - " + $( "#slider-range" ).slider( "values", 1 ) + " CHF" );
 });
+                        </script>
 
                         {{Form::submit('Submit')}}
                         {{Session::get('message')}}
