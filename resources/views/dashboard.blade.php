@@ -25,23 +25,18 @@
                         
                         {{Form::number('name', 'value',['min'=>1,'max'=>5])}}
                         <script>
-$(function() {
-    var hash = window.location.hash;
+<input type="text" name="minval" id="minval" />
+<input type="text" name="maxval" id="maxval" />
 
-    // do some validation on the hash here
-    hash && $('ul.nav a[href="' + hash + '"]').tab('show');
-
-    $( "#slider-range" ).slider({
-        range: true,
-        min: 0,
-        max: 30000,
-        values: [ 0, 30000 ],
-        slide: function( event, ui ) {
-            $( "#amount" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] + " CHF");
-        }
-    });
-    $( "#amount" ).val( $( "#slider-range" ).slider( "values", 0 ) +
-    " - " + $( "#slider-range" ).slider( "values", 1 ) + " CHF" );
+$( "#slider-range" ).slider({
+    range: true,
+    min: 0,
+    max: 500,
+    values: [ 75, 300 ],
+    slide: function( event, ui ) {
+        $("#minval").val(ui.values[0]);
+        $("#maxval").val(ui.values[1]);
+    }
 });
                         </script>
 
