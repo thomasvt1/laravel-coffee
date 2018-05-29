@@ -18,5 +18,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('preference/{id}', function($id) {
-    return App\Preference::find($id);
+    $preference = App\Preference::find($id);
+    $drink = $preference->drink;
+    $drink_data = json_decode($drink->data);
+    return $drink_data->id;
 });
