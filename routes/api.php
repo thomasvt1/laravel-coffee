@@ -17,8 +17,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('preference/{id}', function($id) {
-    $preference = App\Preference::find($id);
+Route::get('special/{id}', function($id) {
+    // Get cup
+    $cup = App\Cup::where("uid", $id)->first();
+    // Get preference
+    $preference = App\Preference::where('cup_id', $cup->id)->first();
     $preference_data = json_decode($preference->data);
     $drink = $preference->drink;
     $drink_data = json_decode($drink->data);
@@ -31,7 +34,9 @@ Route::get('preference/{id}', function($id) {
     }
     // Start
     array_push($result, "K34K34");
+    // Format
     $final = [];
     $final["serial"] = $result;
+    // Return
     return $final;
 });

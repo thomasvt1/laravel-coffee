@@ -14,7 +14,7 @@ class AddDataToCupsTable extends Migration
     public function up()
     {
         Schema::table('cups', function (Blueprint $table) {
-            $table->text('data');
+            $table->string('uid');
         });
     }
 
@@ -26,7 +26,7 @@ class AddDataToCupsTable extends Migration
     public function down()
     {
         Schema::table('cups', function (Blueprint $table) {
-            $table->dropColumn('data');
+            $table->dropColumn('uid');
         });
     }
 }
