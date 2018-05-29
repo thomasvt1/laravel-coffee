@@ -45,6 +45,8 @@ class CustomizeController extends Controller
         $cups = \App\Cup::all();
         $user_cups = $cups->where('user_id', '=', Auth::user()->id)->get();
         
+        return $user_cups;
+        
         $user_cups->where('id', '=', $request->input('cup'))->update(array('name' => $request->input('newname')));
         
         
