@@ -28,8 +28,6 @@
                 </a>
             </div>
             <ul class="nav">
-	    	<!-- <li class="nav-item active"> -->
-		
 		@if (Route::currentRouteName() === 'Dashboard')
 			<li class="nav-item active">
 		@else
@@ -40,7 +38,11 @@
                         <p>Dashboard</p>                  
                     </a>
                 </li>
-                <li>
+                @if (Route::currentRouteName() === 'Your Mugs')
+			<li class="nav-item active">
+		@else
+			<li>
+		@endif
                     <a class="nav-link" href="/customize">
                         <i class="nc-icon nc-favourite-28"></i>
                         <p>Your mugs</p>
