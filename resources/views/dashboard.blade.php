@@ -21,29 +21,12 @@
                         {{ Form::select('cup', $cups->pluck('id', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a cup']) }}
                         {{ Form::select('drink', $drinks->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a drink']) }}
                         
-                        <?php
-                        echo $form->label('percentage_field', t('Percentage of whatever: '));
-                        echo $form->text('percentage_field', $percentage_field);
-                        ?>
-                        
-                        <?php
-                        echo $form->label('percentage_field', t('Percentage of whatever: '));
-                        ?> 
-                        <span class="my_percentage_slider">
-                        <?php 
-                        if (isset($percentage_field)){
-                          echo $percentage_field;
-                        } else {
-                          echo '0';
-                        }
-                        ?>%
-                        </span> 
-
-                        <?php
-                        echo $form->text('percentage_field', $percentage_field, array('class'=>'my_percentage_slider'));
-                        ?>
-
-                        <div class="my_percentage_slider">
+                        <div data-role="main" class="ui-content">
+                          <form method="post" action="/action_page_post.php">
+                            <div data-role="rangeslider">
+                              <label for="price-min">Price:</label>
+                              <input type="range" name="price-min" id="price-min" value="200" min="0" max="1000">
+        
                         </div>
                         
                         {{Form::submit('Submit')}}<br>
