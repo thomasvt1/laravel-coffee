@@ -33,5 +33,5 @@ Route::get('preference/{id}', function($id) {
     array_push($result, "K34K34");
     $final = [];
     $final["serial"] = $result;
-    return json_encode($final);
+    return $final;
 });
