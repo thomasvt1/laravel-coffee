@@ -17,11 +17,8 @@
                            
                         {{Form::open(['route' => 'updateName'])}}
                           
-                        {{ Form::select('location', $machines->pluck('location', 'id'), null, ['hidden', 'class' => 'form-control','placeholder' => 'Pick a location']) }}
-                        {{ Form::select('cup', $cups->pluck('id', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a cup']) }}
-                        {{ Form::select('drink', $drinks->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a drink']) }}
-                        <p class="card-category">Choose your strength:</p>
-                        {{ Form::input('range', 'strength') }}
+                         {{ Form::select('cup', $cups->pluck('id', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a cup']) }}
+                        {{ Form::input('text', 'newname') }}
 
                         <br>
                         {{Form::submit('Submit')}}
@@ -42,7 +39,7 @@
             
             <div class="container-fluid">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-5">
                 <div class="card ">
                     <div class="card-header ">
                         <h4 class="card-title">Mug: Mugname</h4>
