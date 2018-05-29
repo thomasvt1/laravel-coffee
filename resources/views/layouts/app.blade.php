@@ -35,13 +35,13 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <!--<li>
+                <li>
                     <a class="nav-link" href="./user.html">
-                        <i class="nc-icon nc-circle-09"></i>
-                        <p>User Profile</p>
+                        <i class="nc-icon nc-favourite-28"></i>
+                        <p>Your mugs</p>
                     </a>
                 </li>
-                <li>
+               <!-- <li>
                     <a class="nav-link" href="./table.html">
                         <i class="nc-icon nc-notes"></i>
                         <p>Table List</p>
