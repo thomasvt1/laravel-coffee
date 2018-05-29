@@ -24,7 +24,7 @@
         <div class="sidebar-wrapper">
             <div class="logo">
                 <a href="{{ url('/') }}" class="simple-text">
-                    Coffee
+                    Coffee-ID
                 </a>
             </div>
             <ul class="nav">
