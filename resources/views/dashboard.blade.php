@@ -24,7 +24,7 @@
                               <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
 
                         {{ Form::selectRange('number', 10, 15) }}
-                        <!--{{ Form::text('sterkte', Form::myField() )}}-->
+                        
                         {{Form::submit('Submit')}}
                         {{Session::get('message')}}
                         {{ Form::close() }}
