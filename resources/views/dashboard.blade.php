@@ -44,7 +44,7 @@
                         @foreach ($preferences as $preference)   
                             <!--<p>{{ $preference}}</p>-->
                            
-                             Cup: {{$cups->firstWhere('id', $preference->cup_id)->name}} preference drink: {{$drinks->firstWhere('id', $preference->drink_id)->name}} {{(json_decode(($preference->cup_id)->data,true))['strength']}} <br><br> 
+                             Cup: {{$cups->firstWhere('id', $preference->cup_id)->name}} preference drink: {{$drinks->firstWhere('id', $preference->drink_id)->name}} {{(json_decode(($preference->data)->data,true))['strength']}} <br><br> 
                         @endforeach
                         
                     </div>
