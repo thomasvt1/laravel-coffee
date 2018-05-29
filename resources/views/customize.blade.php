@@ -34,6 +34,38 @@
                     </div>
                 </div>
             </div>
+            
+            @foreach ($preferences as $preference)
+            
+            
+            
+            
+            <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card ">
+                    <div class="card-header ">
+                        <h4 class="card-title">Mug: Mugname</h4>
+                        <p class="card-category">Hot chocolate</p>
+                    </div>
+                    <div class="card-body ">
+                           
+                    {{Form::open(['route' => 'updateName'])}}
+                    {{ Form::input('text', 'newname') }}
+                    <br>
+                    {{Form::submit('Submit')}}
+                        
+
+                        
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            
+            @endforeach
+            
             <div class="col-md-8">
                 <div class="card ">
                     <div class="card-header ">
