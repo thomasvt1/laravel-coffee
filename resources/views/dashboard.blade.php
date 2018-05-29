@@ -22,7 +22,7 @@
                         {{ Form::select('drink', $drinks->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a drink']) }}
                         <div class="slidecontainer">
                               <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                            </div>'
+                            </div>
                         <!--{{ Form::macro('myField', function()
                         {
                             return '<div class="slidecontainer">
