@@ -44,7 +44,8 @@ class DashController extends Controller
         $drink_volume = \App\Drink::where('id', $request->input('drink'))->value('volume');
         if ($cup_volume >= $drink_volume) {
             //$request->input('cup') $request->input('drink')
-            $preference = App\Preference::where('cup_id', $cup->id)->first();
+            
+            $preference = App\Preference::where('cup_id', $request->input('cup'))->first();
             $preference_data = json_decode($preference->data);
 
             $preference_data['strength'] = $request->input('strength');
