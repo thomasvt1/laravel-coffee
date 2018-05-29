@@ -24,11 +24,11 @@
                         <div data-role="main" class="ui-content">
                           <form method="post" action="/action_page_post.php">
                             <div data-role="rangeslider">
-                              <label for="price-min">Price:</label>
+                              <label for="price-min">Sterkte:</label>
                               <input type="range" name="price-min" id="price-min" value="200" min="0" max="1000">
         
                         </div>
-                        
+                        $sterkte = value;
                         {{Form::submit('Submit')}}<br>
                         {{Session::get('message')}}
                         {{ Form::close() }}
