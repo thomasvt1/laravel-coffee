@@ -33,16 +33,14 @@
                     <a class="nav-link" href="/">
                         <i class="nc-icon nc-chart-pie-35"></i>
                         <p>Dashboard</p>
-                        @php
-                            $page_name = 'Dashboard'
-                        @endphp
-                        
+                        @php($page_name = 'Dashboard')                        
                     </a>
                 </li>
                 <li>
                     <a class="nav-link" href="/customize">
                         <i class="nc-icon nc-favourite-28"></i>
                         <p>Your mugs</p>
+                        @php($page_name = 'Your mugs')
                     </a>
                 </li>
                <!-- <li>
