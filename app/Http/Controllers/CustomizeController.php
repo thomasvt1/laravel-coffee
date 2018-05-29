@@ -42,15 +42,11 @@ class CustomizeController extends Controller
 
         $newname = $request->input('newname');
         
-        return \App\Cup::all();
         
-        
-        \App\Preference::where('id', '=', $request->input('cup'))->update(array('drink_id' => $request->input('drink')));
+        \App\Cup::where('id', '=', $request->input('cup'))->update(array('name' => $request->input('newname')));
         
         
         return back()->with('message', 'Preference updated successfully.');
-        
-        //\\App\Cup::where('id', '=', $request->input('cup'))->update(array('drink_id' => $request->input('drink')));
         
 
     }
