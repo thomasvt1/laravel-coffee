@@ -20,20 +20,24 @@
                         {{ Form::select('location', $machines->pluck('location', 'id'), null, ['hidden', 'class' => 'form-control','placeholder' => 'Pick a location']) }}
                         {{ Form::select('cup', $cups->pluck('id', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a cup']) }}
                         {{ Form::select('drink', $drinks->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a drink']) }}
-                        <br>
-                        <input type="text" name="maxval" id="maxval" 
+                        
+                        <script type="text/javascript">
 
-                        $( "#slider-range" ).slider({
-                            range: true,
-                            min: 0,
-                            max: 500,
-                            values: [ 75, 300 ],
-                            slide: function( event, ui ) {
-                                $("#maxval").val(ui.values[1]);
-                            }
-                        });
-                        />
-                        <br>
+                        $('input.my_percentage_slider').hide();
+                        $('div.my_percentage_slider').
+                          slider(
+                            { min  : 0,
+                              step : 1,
+                              max  : 100,
+                              value: parseInt($('span.my_percentage_slider').text(),10),
+                              slide: function(event, uiobj) {
+                                      $('span.my_percentage_slider').text(uiobj.value+'%');
+                                      $('input.my_percentage_slider').val(uiobj.value);
+                                    }
+                            });
+
+                        </script>
+                        
                         {{Form::submit('Submit')}}<br>
                         {{Session::get('message')}}
                         {{ Form::close() }}
