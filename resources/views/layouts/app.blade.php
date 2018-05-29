@@ -33,9 +33,11 @@
                     <a class="nav-link" href="/">
                         <i class="nc-icon nc-chart-pie-35"></i>
                         <p>Dashboard</p>
+                        @php
+                            $page_name = 'Dashboard
+                        @endphp
                         
                     </a>
-                    {{ $page_name = 'Dashboard' }}
                 </li>
                 <li>
                     <a class="nav-link" href="/customize">
