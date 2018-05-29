@@ -32,15 +32,13 @@
 		<li>
                     <a class="nav-link" href="/">
                         <i class="nc-icon nc-chart-pie-35"></i>
-                        <p>Dashboard</p>
-                        @php($page_name = 'Dashboard')                        
+                        <p>Dashboard</p>                  
                     </a>
                 </li>
                 <li>
                     <a class="nav-link" href="/customize">
                         <i class="nc-icon nc-favourite-28"></i>
                         <p>Your mugs</p>
-                        @php($page_name = 'Your mugs')
                     </a>
                 </li>
                <!-- <li>
@@ -86,6 +84,7 @@
     <div class="main-panel">
         <nav class="navbar navbar-expand-lg " color-on-scroll="500">
             <div class=" container-fluid  ">
+            @php($page_name = Route::currentRouteName();)
                 <a class="navbar-brand" href="#pablo"> {{$page_name}} </a>
                 <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-bar burger-lines"></span>
