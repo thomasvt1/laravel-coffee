@@ -22,11 +22,9 @@
                         {{ Form::select('drink', $drinks->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a drink']) }}
                         {{ Form::macro('myField', function()
                         {
-      <div data-role="rangeslider">
-        <label for="price-min">Price:</label>
-        <input type="range" name="price-min" id="price-min" value="200" min="0" max="1000">
-        
-      </div>
+                            <div class="slidecontainer">
+                              <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                            </div>
                             return '<input type="awesome">';
                         }) }}
                         {{ Form::text('sterkte', Form::myField() )}}
