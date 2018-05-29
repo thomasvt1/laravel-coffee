@@ -20,13 +20,16 @@
                         {{ Form::select('location', $machines->pluck('location', 'id'), null, ['hidden', 'class' => 'form-control','placeholder' => 'Pick a location']) }}
                         {{ Form::select('cup', $cups->pluck('id', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a cup']) }}
                         {{ Form::select('drink', $drinks->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a drink']) }}
-                        {{ Form::macro('myField', function()
+                        <div class="slidecontainer">
+                              <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                            </div>'
+                        <!--{{ Form::macro('myField', function()
                         {
                             return '<div class="slidecontainer">
                               <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
                             </div>';
                         }) }}
-                        {{ Form::text('sterkte', Form::myField() )}}
+                        {{ Form::text('sterkte', Form::myField() )}}-->
                         {{Form::submit('Submit')}}
                         {{Session::get('message')}}
                         {{ Form::close() }}
