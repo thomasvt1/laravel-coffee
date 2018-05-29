@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/', 'DashController@index')->name('/');
-Route::get('/customize', 'CustomizeController@index')->name('/');
+Route::get('/', 'DashController@index')->name('Dashboard');
+Route::get('/customize', 'CustomizeController@index')->name('Your Mugs');
 
 Auth::routes();
 Route::post('/','DashController@update')->name('updateName');
