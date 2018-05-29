@@ -20,10 +20,7 @@
                         {{ Form::select('location', $machines->pluck('location', 'id'), null, ['hidden', 'class' => 'form-control','placeholder' => 'Pick a location']) }}
                         {{ Form::select('cup', $cups->pluck('id', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a cup']) }}
                         {{ Form::select('drink', $drinks->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a drink']) }}
-
                         {{ Form::input('range', 'name') }}
-                        
-                        {{Form::number('name', 'value',['min'=>1,'max'=>5])}}
 
 
                         {{Form::submit('Submit')}}
