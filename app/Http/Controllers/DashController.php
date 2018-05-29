@@ -31,7 +31,7 @@ class DashController extends Controller
         $machines = \App\Machine::all();
         $drinks = \App\Drink::all();
         $preferences = \App\Preference::all()->whereIn('cup_id', $cups->pluck('id'));
-        return view('dashboard', ['cup' => $cup, 'cupses' => $cupses, 'users' => $users, 'machines' => $machines, 'drinks' => $drinks, 'preferences' => $preferences]);
+        return view('dashboard', ['cup' => $cup, 'cup' => $cupses, 'users' => $users, 'machines' => $machines, 'drinks' => $drinks, 'preferences' => $preferences]);
 
     }
 
