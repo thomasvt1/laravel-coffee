@@ -21,7 +21,7 @@
                         {{ Form::select('cup', $cups->pluck('id', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a cup']) }}
                         {{ Form::select('drink', $drinks->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a drink']) }}
                         <br>
-                        <input type="text" name="maxval" id="maxval" />
+                        <input type="text" name="maxval" id="maxval" 
 
                         $( "#slider-range" ).slider({
                             range: true,
@@ -32,7 +32,7 @@
                                 $("#maxval").val(ui.values[1]);
                             }
                         });
-                        
+                        />
                         <br>
                         {{Form::submit('Submit')}}<br>
                         {{Session::get('message')}}
