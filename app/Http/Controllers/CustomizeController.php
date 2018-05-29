@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class DashController extends Controller
+class CustomizeController extends Controller
 {
     /**
      * Create a new controller instance.
