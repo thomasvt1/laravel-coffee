@@ -43,7 +43,7 @@ class CustomizeController extends Controller
         $newname = $request->input('newname');
         
         $cups = \App\Cup::all();
-        $user_cups = $cups->where('user_id', '=', Auth::user()->id)->get();
+        $user_cups = $cups->where('user_id', '=', Auth::user()->id);
         
         return $user_cups;
         
