@@ -24,21 +24,7 @@
                         <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
                         
                         {{Form::number('name', 'value',['min'=>1,'max'=>5])}}
-                        <script>
-<input type="text" name="minval" id="minval" />
-<input type="text" name="maxval" id="maxval" />
 
-$( "#slider-range" ).slider({
-    range: true,
-    min: 0,
-    max: 500,
-    values: [ 75, 300 ],
-    slide: function( event, ui ) {
-        $("#minval").val(ui.values[0]);
-        $("#maxval").val(ui.values[1]);
-    }
-});
-                        </script>
 
                         {{Form::submit('Submit')}}
                         {{Session::get('message')}}
