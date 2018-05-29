@@ -28,7 +28,7 @@
                               <input type="range" name="price-min" id="price-min" value="200" min="0" max="1000">
         
                         </div>
-                        $sterkte = value;
+                        
                         {{Form::submit('Submit')}}<br>
                         {{Session::get('message')}}
                         {{ Form::close() }}
