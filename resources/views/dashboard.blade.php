@@ -21,10 +21,18 @@
                         {{ Form::select('cup', $cups->pluck('id', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a cup']) }}
                         {{ Form::select('drink', $drinks->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a drink']) }}
                         <br>
-                        <div class="slidecontainer">
-                            <p>Custom range slider:</p>
-                            <input type="range" min="1" max="10" value="5" class="slider" id="myRange">
-                        </div>
+                        <input type="text" name="maxval" id="maxval" />
+
+                        $( "#slider-range" ).slider({
+                            range: true,
+                            min: 0,
+                            max: 500,
+                            values: [ 75, 300 ],
+                            slide: function( event, ui ) {
+                                $("#maxval").val(ui.values[1]);
+                            }
+                        });
+                        
                         <br>
                         {{Form::submit('Submit')}}<br>
                         {{Session::get('message')}}

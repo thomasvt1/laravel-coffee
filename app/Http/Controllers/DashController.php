@@ -47,7 +47,7 @@ class DashController extends Controller
             \App\Preference::where('id', '=', $request->input('cup'))->update(array('drink_id' => $request->input('drink')));
             return back()->with('message', 'Preference updated successfully.');
         } else {
-            return back()->with('message', "Your choice is too big for the selected cup. Cup volume: " . $cup_volume . ' drink volume: ' . $drink_volume . $request->input('myRange') .'.');
+            return back()->with('message', "Your choice is too big for the selected cup. Cup volume: " . $cup_volume . ' drink volume: ' . $drink_volume . $request->maxval .'.');
         }
     }
 }
