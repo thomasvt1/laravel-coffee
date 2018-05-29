@@ -33,7 +33,7 @@
                     <a class="nav-link" href="/">
                         <i class="nc-icon nc-chart-pie-35"></i>
                         <p>Dashboard</p>
-                        {{ $page_name = Dashboard}}
+                        {{ $page_name = 'Dashboard' }}
                     </a>
                 </li>
                 <li>
