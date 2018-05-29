@@ -23,7 +23,7 @@
                         
                         <script type="text/javascript">
 
-                        $('input.my_percentage_slider').hide();
+                        $('input.my_percentage_slider');
                         $('div.my_percentage_slider').
                           slider(
                             { min  : 0,
