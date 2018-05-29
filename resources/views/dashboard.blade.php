@@ -21,12 +21,6 @@
                         {{ Form::select('cup', $cups->pluck('id', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a cup']) }}
                         {{ Form::select('drink', $drinks->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a drink']) }}
                         
-
-                        {{Form::text('Sterkte'->Form::myField())}}
-                        {{Form::submit('Submit')}}<br>
-                        {{Session::get('message')}}
-                        {{ Form::close() }}
-                        
                         Form::macro('myField', function()
                         {
                           <div data-role="main" class="ui-content">
@@ -39,6 +33,12 @@
                             return '<input type="text" sterkte = value>';
                           </div>
                         });
+                        {{Form::text('Sterkte'->Form::myField())}}
+                        {{Form::submit('Submit')}}<br>
+                        {{Session::get('message')}}
+                        {{ Form::close() }}
+                        
+
                         
                     </div>
                 </div>
