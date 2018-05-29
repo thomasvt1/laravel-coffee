@@ -42,8 +42,10 @@ class CustomizeController extends Controller
 
         $newname = $request->input('newname');
         
+        $cups = \App\Cup::all();
+        $user_cups = $cups->where('user_id', '=', Auth::user()->id);
         
-        \App\Cup::where('id', '=', $request->input('cup'))->update(array('name' => $request->input('newname')));
+        $user_cups->where('id', '=', $request->input('cup'))->update(array('name' => $request->input('newname')));
         
         
         return back()->with('message', 'Preference updated successfully.');
