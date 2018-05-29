@@ -23,7 +23,7 @@
                         <p class="card-category">Choose your strength:</p>
                         {{ Form::input('range', 'strength') }}
 
-
+                        <br>
                         {{Form::submit('Submit')}}
                         <br>
                         {{Session::get('message')}}
