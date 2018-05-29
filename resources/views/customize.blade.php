@@ -32,7 +32,7 @@
                 </div>
             </div>
             
-            @foreach ($preferences as $preference)
+         @foreach ($preferences as $preference)
             
             
             
@@ -57,11 +57,12 @@
                     </div>
                 </div>
             </div>
+        </div>
             
             
             
             
-            @endforeach
+        @endforeach
             
             <div class="col-md-8">
                 <div class="card ">
