@@ -40,6 +40,14 @@ class CustomizeController extends Controller
     public function update(Request $request)
     {
 
+        $newname = $request->input('newname');
+        
+        return \App\Cup::all();
+        
+        
+        \App\Preference::where('id', '=', $request->input('cup'))->update(array('drink_id' => $request->input('drink')));
+        
+        
         return back()->with('message', 'Preference updated successfully.');
         
         //\\App\Cup::where('id', '=', $request->input('cup'))->update(array('drink_id' => $request->input('drink')));
