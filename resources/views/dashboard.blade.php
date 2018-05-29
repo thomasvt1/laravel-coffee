@@ -32,7 +32,7 @@
                         <span class="my_percentage_slider">
                         <?php 
                         if (isset($percentage_field)){
-                        echo $percentage_field;
+                          echo $percentage_field;
                         } else {
                           echo '0';
                         }
