@@ -17,6 +17,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('preference', function($id) {
+Route::get('preference/{id}', function($id) {
     return App\Preference::get($id);
 });
