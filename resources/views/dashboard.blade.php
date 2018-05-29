@@ -24,6 +24,7 @@
                         {
                             return '<input type="awesome">';
                         }) }}
+                        {{ Form::text('sterkte', Form::myField() )}}
                         {{Form::submit('Submit')}}
                         {{Session::get('message')}}
                         {{ Form::close() }}
