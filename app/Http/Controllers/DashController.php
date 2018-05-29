@@ -46,7 +46,7 @@ class DashController extends Controller
             //$request->input('cup') $request->input('drink')
             
             $preference = \App\Preference::where('cup_id', $request->input('cup'))->first();
-            $preference_data = json_decode($preference->data);
+            $preference_data = json_decode($preference->data, true);
 
             $preference_data['strength'] = $request->input('strength');
             
