@@ -21,7 +21,9 @@
                         {{ Form::select('cup', $cups->pluck('id', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a cup']) }}
                         {{ Form::select('drink', $drinks->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a drink']) }}
 
-                              <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                        
+                        {{Form::number('name', 'value',['min'=>1,'max'=>5])}}
 
 
                         {{Form::submit('Submit')}}
