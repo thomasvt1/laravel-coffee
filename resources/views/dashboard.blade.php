@@ -21,17 +21,25 @@
                         {{ Form::select('cup', $cups->pluck('id', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a cup']) }}
                         {{ Form::select('drink', $drinks->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a drink']) }}
                         
-                        <div data-role="main" class="ui-content">
+
+                        {{Form::text('Sterkte'->Form::myField())}}
+                        {{Form::submit('Submit')}}<br>
+                        {{Session::get('message')}}
+                        {{ Form::close() }}
+                        
+                        Form::macro('myField', function()
+                        {
+                          <div data-role="main" class="ui-content">
                           <form method="post" action="/action_page_post.php">
                             <div data-role="rangeslider">
                               <label for="price-min">Sterkte:</label>
                               <input type="range" name="price-min" id="price-min" value="200" min="0" max="1000">
         
-                        </div>
+                            </div>
+                            return '<input type="text" sterkte = value>';
+                          </div>
+                        });
                         
-                        {{Form::submit('Submit')}}<br>
-                        {{Session::get('message')}}
-                        {{ Form::close() }}
                     </div>
                 </div>
             </div>
