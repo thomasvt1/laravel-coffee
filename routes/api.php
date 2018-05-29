@@ -19,7 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('special/{id}', function($id) {
     // Get cup
-    strtolower($id);
+    $id = strtolower($id);
     $cup = App\Cup::where("uid", $id)->first();
     // Get preference
     $preference = App\Preference::where('cup_id', $cup->id)->first();
