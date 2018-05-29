@@ -10,7 +10,7 @@
             <div class="col-md-4">
                 <div class="card ">
                     <div class="card-header ">
-                        <h4 class="card-title">Change preference</h4>
+                        <h4 class="card-title">Your mugs</h4>
                         <p class="card-category">Here it is possible to change your preference</p>
                     </div>
                     <div class="card-body ">
