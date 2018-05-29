@@ -23,6 +23,11 @@
                         
                         <?php
                         echo $form->label('percentage_field', t('Percentage of whatever: '));
+                        echo $form->text('percentage_field', $percentage_field);
+                        ?>
+                        
+                        <?php
+                        echo $form->label('percentage_field', t('Percentage of whatever: '));
                         ?> 
                         <span class="my_percentage_slider">
                         <?php 
