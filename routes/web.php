@@ -15,7 +15,7 @@ Route::get('/', 'DashController@index')->name('Dashboard');
 Route::get('/customize', 'CustomizeController@index')->name('Your Mugs');
 
 Auth::routes();
-Route::post('/','DashController@update')->name('updateName');
+Route::post('/','DashController@update')->name('updateCup');
 Route::post('/customize','CustomizeController@update')->name('updateName');
 
 //Route::group(['namespace' => 'DashController',], function () {
