@@ -36,7 +36,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="nav-link" href="./user.html">
+                    <a class="nav-link" href="/customize">
                         <i class="nc-icon nc-favourite-28"></i>
                         <p>Your mugs</p>
                     </a>
