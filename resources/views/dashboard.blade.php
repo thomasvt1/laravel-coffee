@@ -35,15 +35,7 @@
                         });
                         {{Form::text('Sterkte'->Form::myField())}}-->
                         
-                        var slider = document.getElementById('slider');
-
-                        noUiSlider.create(slider, {
-                            start: [ 80 ],
-                            range: {
-                                'min': [   0 ],
-                                'max': [ 100 ]
-                            }
-                        });
+                        
                         {{Form::submit('Submit')}}<br>
                         {{Session::get('message')}}
                         {{ Form::close() }}
