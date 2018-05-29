@@ -29,6 +29,9 @@
                     </div>
                 </div>
             </div>
+            
+            @foreach ($preferences as $preference)
+            
             <div class="col-md-2">
                 <div class="card ">
                     <div class="card-header ">
@@ -40,6 +43,9 @@
                     </div>
                 </div>
             </div>
+            
+            @endforeach
+            
         </div>
     </div>
 @endsection
