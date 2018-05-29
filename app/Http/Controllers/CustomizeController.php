@@ -30,7 +30,7 @@ class CustomizeController extends Controller
         $machines = \App\Machine::all();
         $drinks = \App\Drink::all();
         $preferences = \App\Preference::all()->whereIn('cup_id', $cups->pluck('id'));
-        return view('dashboard', ['cups' => $cups, 'users' => $users, 'machines' => $machines, 'drinks' => $drinks, 'preferences' => $preferences]);
+        return view('customize', ['cups' => $cups, 'users' => $users, 'machines' => $machines, 'drinks' => $drinks, 'preferences' => $preferences]);
 
     }
 
