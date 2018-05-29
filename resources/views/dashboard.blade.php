@@ -36,7 +36,7 @@
                         {{Form::text('Sterkte'->Form::myField())}}-->
                         
                         
-                        {{Form::submit('Submit')}}<br>
+                        {{Form::submit('Submit')}}
                         {{Session::get('message')}}
                         {{ Form::close() }}
                         
