@@ -31,8 +31,9 @@ class DashController extends Controller
         $users = \App\User::all();
         $machines = \App\Machine::all();
         $drinks = \App\Drink::all();
-        $preferences = \App\Preference::all()->whereIn('cup_id', $user_cups->pluck('id'));
-        return view('dashboard', ['user_cups' => $user_cups, 'cups' => $cups, 'users' => $users, 'machines' => $machines, 'drinks' => $drinks, 'preferences' => $preferences]);
+        $preference = \App\Preference::all()
+        $preferences = $preference->whereIn('cup_id', $user_cups->pluck('id'));
+        return view('dashboard', ['user_cups' => $user_cups, 'cups' => $cups, 'users' => $users, 'machines' => $machines, 'drinks' => $drinks, 'preference' => $preference, 'preferences' => $preferences]);
 
     }
 
@@ -46,7 +47,7 @@ class DashController extends Controller
         $drink_volume = \App\Drink::where('id', $request->input('drink'))->value('volume');
         if ($cup_volume >= $drink_volume) {
             //$request->input('cup') $request->input('drink')
-            
+                        
             $preference = \App\Preference::where('cup_id', $request->input('cup'))->first();
             $preference_data = json_decode($preference->data, true);
 
