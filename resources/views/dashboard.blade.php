@@ -21,22 +21,25 @@
                         {{ Form::select('cup', $cups->pluck('id', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a cup']) }}
                         {{ Form::select('drink', $drinks->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a drink']) }}
                         
-                        <script type="text/javascript">
+                        <?php
+                        echo $form->label('percentage_field', t('Percentage of whatever: '));
+                        ?> 
+                        <span class="my_percentage_slider">
+                        <?php 
+                        if (isset($percentage_field)){
+                        echo $percentage_field;
+                        } else {
+                          echo '0';
+                        }
+                        ?>%
+                        </span> 
 
-                        $('input.my_percentage_slider');
-                        $('div.my_percentage_slider').
-                          slider(
-                            { min  : 0,
-                              step : 1,
-                              max  : 100,
-                              value: parseInt($('span.my_percentage_slider').text(),10),
-                              slide: function(event, uiobj) {
-                                      $('span.my_percentage_slider').text(uiobj.value+'%');
-                                      $('input.my_percentage_slider').val(uiobj.value);
-                                    }
-                            });
+                        <?php
+                        echo $form->text('percentage_field', $percentage_field, array('class'=>'my_percentage_slider'));
+                        ?>
 
-                        </script>
+                        <div class="my_percentage_slider">
+                        </div>
                         
                         {{Form::submit('Submit')}}<br>
                         {{Session::get('message')}}
