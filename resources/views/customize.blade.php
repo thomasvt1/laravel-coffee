@@ -35,7 +35,7 @@
             <div class="col-md-2">
                 <div class="card ">
                     <div class="card-header ">
-                        <h4 class="card-title">Your preferences</h4>
+                        <h4 class="card-title">Mug: {{$cup->firstWhere('id', $preference->cup_id)->name}}</h4>
                         <p class="card-category"></p>
                     </div>
                     <div class="card-body ">
