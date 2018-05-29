@@ -22,10 +22,9 @@
                         {{ Form::select('drink', $drinks->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a drink']) }}
                         {{ Form::macro('myField', function()
                         {
-                            <div class="slidecontainer">
+                            return '<div class="slidecontainer">
                               <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                            </div>
-                            return '<input type="awesome">';
+                            </div>';
                         }) }}
                         {{ Form::text('sterkte', Form::myField() )}}
                         {{Form::submit('Submit')}}
