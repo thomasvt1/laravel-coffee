@@ -43,13 +43,13 @@
 						Login
 					</button>
 					
-					<a class="btn btn-link" href="{{ route('password.request') }}">
+<!--					<a class="btn btn-link" href="{{ route('password.request') }}">
                         Forgot Your Password?
-                    </a>
+                    </a> -->
 				</div>
-<!-- 								<div class="margin-top20 text-center">
-					Don't have an account? <a href="register.html">Create One</a>
-				</div> -->
+ 								<div class="margin-top20 text-center">
+					Don't have an account? <a href=/register>Create One</a>
+				</div>
 			</form>
 		</div>
 	</div>
