@@ -20,7 +20,7 @@
                         {{ Form::select('location', $machines->pluck('location', 'id'), null, ['hidden', 'class' => 'form-control','placeholder' => 'Pick a location']) }}
                         {{ Form::select('cup', $cups->pluck('id', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a cup']) }}
                         {{ Form::select('drink', $drinks->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a drink']) }}
-                        
+                        <!--
                         Form::macro('myField', function()
                         {
                           <div data-role="main" class="ui-content">
@@ -33,7 +33,17 @@
                             return '<input type="text" sterkte = value>';
                           </div>
                         });
-                        {{Form::text('Sterkte'->Form::myField())}}
+                        {{Form::text('Sterkte'->Form::myField())}}-->
+                        
+                        var slider = document.getElementById('slider');
+
+                        noUiSlider.create(slider, {
+                            start: [ 80 ],
+                            range: {
+                                'min': [   0 ],
+                                'max': [ 100 ]
+                            }
+                        });
                         {{Form::submit('Submit')}}<br>
                         {{Session::get('message')}}
                         {{ Form::close() }}
