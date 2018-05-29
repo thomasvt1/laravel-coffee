@@ -49,6 +49,7 @@ class DashController extends Controller
             $preference_data = json_decode($preference->data);
 
             $preference_data['strength'] = $request->input('strength');
+            
             \App\Preference::where('id', '=', $request->input('cup'))->update(array('drink_id' => $request->input('drink')));
             \App\Preference::where('id', '=', $request->input('cup'))->update(array('data' =>json_encode($preference_data)));
             return back()->with('message', 'Preference updated successfully.');
