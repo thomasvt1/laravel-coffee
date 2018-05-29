@@ -30,7 +30,7 @@ class CustomizeController extends Controller
         $machines = \App\Machine::all();
         $drinks = \App\Drink::all();
         $preferences = \App\Preference::all()->whereIn('cup_id', $cups->pluck('id'));
-        return view('customize', ['cups' => $cups, 'users' => $users, 'machines' => $machines, 'drinks' => $drinks, 'preferences' => $preferences]);
+        return view('dashboard', ['cups' => $cups, 'users' => $users, 'machines' => $machines, 'drinks' => $drinks, 'preferences' => $preferences]);
 
     }
 
@@ -44,10 +44,17 @@ class CustomizeController extends Controller
         $drink_volume = \App\Drink::where('id', $request->input('drink'))->value('volume');
         if ($cup_volume >= $drink_volume) {
             //$request->input('cup') $request->input('drink')
-            \App\Preference::where('id', '=', $request->input('cup'))->update(array('drink_id' => $request->input('drink    ')));
+            
+            $preference = \App\Preference::where('cup_id', $request->input('cup'))->first();
+            $preference_data = json_decode($preference->data, true);
+
+            $preference_data['strength'] = $request->input('strength');
+            
+            \App\Preference::where('id', '=', $request->input('cup'))->update(array('drink_id' => $request->input('drink')));
+            \App\Preference::where('id', '=', $request->input('cup'))->update(array('data' =>json_encode($preference_data)));
             return back()->with('message', 'Preference updated successfully.');
         } else {
-            return back()->with('message', "Your choice is too big for the selected cup. Cup volume: " . $cup_volume . ' drink volume: ' . $drink_volume . $request->input('sterkte') . '.');
+            return back()->with('message', "Your choice is too big for the selected cup. Cup volume: " . $cup_volume . ' drink volume: ' . $drink_volume . $request->input('strength') . '.');
         }
     }
 }
