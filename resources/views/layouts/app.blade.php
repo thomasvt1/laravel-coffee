@@ -33,6 +33,7 @@
                     <a class="nav-link" href="/">
                         <i class="nc-icon nc-chart-pie-35"></i>
                         <p>Dashboard</p>
+                        {{ $page_name = Dashboard}}
                     </a>
                 </li>
                 <li>
@@ -84,7 +85,7 @@
     <div class="main-panel">
         <nav class="navbar navbar-expand-lg " color-on-scroll="500">
             <div class=" container-fluid  ">
-                <a class="navbar-brand" href="#pablo"> Dashboard </a>
+                <a class="navbar-brand" href="#pablo"> {{$page_name}} </a>
                 <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-bar burger-lines"></span>
                     <span class="navbar-toggler-bar burger-lines"></span>
