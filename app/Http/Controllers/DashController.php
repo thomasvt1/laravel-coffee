@@ -26,11 +26,12 @@ class DashController extends Controller
     {
 
         $cups = \App\Cup::where('user_id', '=', Auth::user()->id);
+        $cup = \App\Cup::all();
         $users = \App\User::all();
         $machines = \App\Machine::all();
         $drinks = \App\Drink::all();
         $preferences = \App\Preference::all()->whereIn('cup_id', $cups->pluck('id'));
-        return view('dashboard', ['cups' => $cups, 'users' => $users, 'machines' => $machines, 'drinks' => $drinks, 'preferences' => $preferences]);
+        return view('dashboard', ['cup' => $cup, 'cupses' => $cupses, 'users' => $users, 'machines' => $machines, 'drinks' => $drinks, 'preferences' => $preferences]);
 
     }
 
