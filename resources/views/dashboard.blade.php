@@ -15,7 +15,7 @@
                     </div>
                     <div class="card-body ">
                            
-                        {{Form::open(['route' => 'updateName'])}}
+                        {{Form::open(['route' => 'updateCup'])}}
                           
                         {{ Form::select('location', $machines->pluck('location', 'id'), null, ['hidden', 'class' => 'form-control','placeholder' => 'Pick a location']) }}
                         {{ Form::select('cup', $user_cups->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a cup']) }}
