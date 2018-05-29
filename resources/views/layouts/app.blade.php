@@ -29,8 +29,7 @@
             </div>
             <ul class="nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="">
-                   	<a class="nav-link" href="/">
+                    <a class="nav-link" href="/">
                         <i class="nc-icon nc-chart-pie-35"></i>
                         <p>Dashboard</p>
                     </a>
