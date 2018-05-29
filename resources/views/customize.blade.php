@@ -17,7 +17,7 @@
                            
                         {{Form::open(['route' => 'updateName'])}}
                           
-                         {{ Form::select('cup', $cups->pluck('id', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a cup']) }}
+                        {{ Form::select('cup', $cups->pluck('id', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a cup']) }}
                         {{ Form::input('text', 'newname') }}
 
                         <br>
@@ -50,6 +50,7 @@
                     {{ Form::input('text', 'newname') }}
                     <br>
                     {{Form::submit('Submit')}}
+                    {{ Form::close() }}
                         
 
                         
