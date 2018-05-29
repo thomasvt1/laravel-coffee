@@ -29,7 +29,7 @@
                                     <input type="range" name="price-min" id="price-min" value="200" min="0" max="1000">
         
                                   </div>
-                            return 'price-min';
+                            return '<input type="awesome">';
                               </div>
                         }) }}
                         {{ Form::text('sterkte', Form::myField() )}}
