@@ -25,12 +25,14 @@ class CustomizeController extends Controller
     public function index()
     {
 
-        $cups = \App\Cup::where('user_id', '=', Auth::user()->id);
+        
+        $cups = \App\Cup::all();
+        $user_cups = $cups->where('user_id', '=', Auth::user()->id);
         $users = \App\User::all();
         $machines = \App\Machine::all();
         $drinks = \App\Drink::all();
-        $preferences = \App\Preference::all()->whereIn('cup_id', $cups->pluck('id'));
-        return view('customize', ['cups' => $cups, 'users' => $users, 'machines' => $machines, 'drinks' => $drinks, 'preferences' => $preferences]);
+        $preferences = \App\Preference::all()->whereIn('cup_id', $user_cups->pluck('id'));
+        return view('customize', ['user_cups' => $user_cups, 'cups' => $cups, 'users' => $users, 'machines' => $machines, 'drinks' => $drinks, 'preferences' => $preferences]);
 
     }
 
