@@ -23,7 +23,7 @@ class DashController extends Controller
      * @return \Illuminate\Http\Response
      */    
      
-    function add_leading_zero($value, $threshold = 2) {
+    private function add_leading_zero($value, $threshold = 2) {
         return sprintf('%0' . $threshold . 's', $value);
     }
     public function index()
