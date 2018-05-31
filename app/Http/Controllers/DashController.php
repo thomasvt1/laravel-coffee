@@ -21,7 +21,11 @@ class DashController extends Controller
      * Show the application dashboard.
      *
      * @return \Illuminate\Http\Response
-     */
+     */    
+     
+    function add_leading_zero($value, $threshold = 2) {
+        return sprintf('%0' . $threshold . 's', $value);
+    }
     public function index()
     {
 
@@ -51,9 +55,7 @@ class DashController extends Controller
 
     }
     
-    function add_leading_zero($value, $threshold = 2) {
-    return sprintf('%0' . $threshold . 's', $value);
-}
+
 
 
     public function update(Request $request)
