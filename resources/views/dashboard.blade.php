@@ -17,8 +17,7 @@
                            
                         {{Form::open(['route' => 'updateCup'])}}
                         {{Form::checkbox('name', 'value', true)}}
-                        {{Form::radio('name', 'value', true)}}
-                        {{Form::input('timepicker','time')}}
+                        {{Form::input('clockpicker','time')}}
                         {{ Form::select('location', $machines->pluck('location', 'id'), null, ['hidden', 'class' => 'form-control','placeholder' => 'Pick a location']) }}
                         {{ Form::select('cup', $user_cups->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a cup']) }}
                         {{ Form::select('drink', $drinks->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a drink']) }}
