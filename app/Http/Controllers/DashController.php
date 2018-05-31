@@ -82,10 +82,10 @@ class DashController extends Controller
         }
     }
     
-   /* public function deletePref(Request $request)
+    public function deletePref(Request $request)
     {
 
         return back()->with('message', $request->input('box').'.');
         
-    }*/
+    }
 }
