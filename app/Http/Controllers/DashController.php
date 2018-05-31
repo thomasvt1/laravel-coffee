@@ -79,4 +79,11 @@ class DashController extends Controller
             return back()->with('message', "Your choice is too big for the selected cup. Cup volume: " . $cup_volume . ' drink volume: ' . $drink_volume . '.');
         }
     }
+    
+    public function deletePrefCup(Request $request)
+    {
+
+        return back()->with('message', $request->input('box'),'.');
+        
+    }
 }
