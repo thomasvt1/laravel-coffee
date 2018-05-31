@@ -44,12 +44,16 @@ class DashController extends Controller
                 $hours++;
                 $minutes = 00;
             }            
-            array_push($time, $hours . ':' . $minutes);
+            array_push($time, $hours . ':' . add_leading_zero($minutes));
         }
         
         return view('dashboard', ['user_cups' => $user_cups, 'cups' => $cups, 'users' => $users, 'machines' => $machines, 'drinks' => $drinks, 'preferences' => $preferences, 'time' => $time]);
 
     }
+    
+    function add_leading_zero($value, $threshold = 2) {
+    return sprintf('%0' . $threshold . 's', $value);
+}
 
 
     public function update(Request $request)
