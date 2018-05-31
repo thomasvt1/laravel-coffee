@@ -33,8 +33,8 @@ class DashController extends Controller
         $drinks = \App\Drink::all();
         $preferences = \App\Preference::all()->whereIn('cup_id', $user_cups->pluck('id'));
         $time= array();
-        $hours= 0;
-        $minutes =0;
+        $hours= 00;
+        $minutes =00;
         array_push($time,'00:00');
         for ($x = 0; $x <= 47; $x++) {
             
