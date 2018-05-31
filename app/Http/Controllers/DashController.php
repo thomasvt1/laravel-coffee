@@ -32,15 +32,15 @@ class DashController extends Controller
         $machines = \App\Machine::all();
         $drinks = \App\Drink::all();
         $preferences = \App\Preference::all()->whereIn('cup_id', $user_cups->pluck('id'));
-        $time[] = [];
+        $time[] = ["00:00"];
         $hours= 0;
         $minutes =0;
-        for ($x = 0; $x <= 10; $x++) {
+        for ($x = 0; $x <= 47; $x++) {
             $minutes = $minutes + 30;
             
             if ($minutes == 60){
                 $hours++;
-                $minutes = 0;
+                $minutes = 00;
             }            
             array_push($time, $hours . ':' . $minutes);
         }
