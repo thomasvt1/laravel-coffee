@@ -23,9 +23,7 @@ class DashController extends Controller
      * @return \Illuminate\Http\Response
      */    
      
-    private function add_leading_zero($value, $threshold = 2) {
-        return sprintf('%0' . $threshold . 's', $value);
-    }
+
     public function index()
     {
 
@@ -48,7 +46,7 @@ class DashController extends Controller
                 $hours++;
                 $minutes = 00;
             }            
-            array_push($time, $hours . ':' . add_leading_zero($minutes));
+            array_push($time, $hours . ':' . sprintf('%0' . 2 . 's',$minutes));
         }
         
         return view('dashboard', ['user_cups' => $user_cups, 'cups' => $cups, 'users' => $users, 'machines' => $machines, 'drinks' => $drinks, 'preferences' => $preferences, 'time' => $time]);
