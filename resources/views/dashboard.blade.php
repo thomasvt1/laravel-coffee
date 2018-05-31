@@ -20,9 +20,9 @@
                         {{ Form::select('location', $machines->pluck('location', 'id'), null, ['hidden', 'class' => 'form-control','placeholder' => 'Pick a location']) }}
                         {{ Form::select('cup', $user_cups->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a cup']) }}
                         {{ Form::select('drink', $drinks->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a drink']) }}
-                        <!--{{ Form::select('startTime', $time, null, ['required', 'class' => 'form-control','placeholder' => 'Pick a start time']) }}
-                        {{ Form::select('EndTime', $time, null, ['required', 'class' => 'form-control','placeholder' => 'Pick a end time']) }}-->
-
+                      <!--  {{ Form::select('startTime', $time, null, ['required', 'class' => 'form-control','placeholder' => 'Pick a start time']) }}
+                        {{ Form::select('EndTime', $time, null, ['required', 'class' => 'form-control','placeholder' => 'Pick a end time']) }}
+-->
                         
                         <p class="card-category">Choose your strength:</p>
                         {{ Form::input('range', 'strength') }}
