@@ -36,9 +36,9 @@ class DashController extends Controller
         $hours= 0;
         $minutes =0;
         for ($x = 0; $x <= 10; $x++) {
-            minutes++;
+            $minutes++;
             
-            if (minutes= 60){
+            if ($minutes= 60){
                 $hours++;
                 $minutes = 0;
             }            
