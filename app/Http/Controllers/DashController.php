@@ -32,7 +32,7 @@ class DashController extends Controller
         $machines = \App\Machine::all();
         $drinks = \App\Drink::all();
         $preferences = \App\Preference::all()->whereIn('cup_id', $user_cups->pluck('id'));
-        $timevalue[] = [];
+        $time[] = [];
         $hours= 0;
         $minutes =0;
         for ($x = 0; $x <= 10; $x++) {
@@ -42,7 +42,7 @@ class DashController extends Controller
                 $hours++;
                 $minutes = 0;
             }            
-            array_push($timevalue, $hours . ':' . $minutes);
+            array_push($time, $hours . ':' . $minutes);
         }
         
         return view('dashboard', ['user_cups' => $user_cups, 'cups' => $cups, 'users' => $users, 'machines' => $machines, 'drinks' => $drinks, 'preferences' => $preferences, 'time' => $time]);
