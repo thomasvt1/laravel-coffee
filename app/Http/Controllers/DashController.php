@@ -80,10 +80,10 @@ class DashController extends Controller
         }
     }
     
-    public function deletePrefCup(Request $request)
+   /* public function deletePrefCup(Request $request)
     {
 
         return back()->with('message', $request->input('box').'.');
         
-    }
+    }*/
 }
