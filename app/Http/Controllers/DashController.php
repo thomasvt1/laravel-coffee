@@ -38,6 +38,7 @@ class DashController extends Controller
         $hours= 00;
         $minutes =00;
         array_push($time,'00:00');
+        
         for ($x = 0; $x <= 46; $x++) {
             
             $minutes = $minutes + 30;
@@ -49,7 +50,7 @@ class DashController extends Controller
             array_push($time, sprintf('%0' . 2 . 's', $hours) . ':' . sprintf('%0' . 2 . 's', $minutes));
         }
         
-        return view('dashboard', ['user_cups' => $user_cups, 'cups' => $cups, 'users' => $users, 'machines' => $machines, 'drinks' => $drinks, 'preferences' => $preferences, 'time' => $time]);
+        return view('dashboard', ['user_cups' => $user_cups, 'cups' => $cups, 'users' => $users, 'machines' => $machines, 'drinks' => $drinks, 'preferences' => $preferences]);
 
     }
     
