@@ -83,7 +83,7 @@ class DashController extends Controller
     public function deletePrefCup(Request $request)
     {
 
-        return back()->with('message', $request->input('box'),'.');
+        return back()->with('message', $request->input('box').'.');
         
     }
 }
