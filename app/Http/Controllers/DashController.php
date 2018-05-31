@@ -39,7 +39,7 @@ class DashController extends Controller
         $minutes =00;
         array_push($time,'00:00');
         
-        for ($x = 0; $x <= 46; $x++) {
+        for ($x = 0; $x <= 46; $x++){
             
             $minutes = $minutes + 30;
             
