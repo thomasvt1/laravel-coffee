@@ -45,7 +45,7 @@
                         <p class="card-category"></p>
                     </div>
                     <div class="card-body ">
-                        {{Form::open(['route' => 'deletePref'])}}
+                        {{Form::open(['route' => 'deletePrefCup'])}}
                         @foreach ($preferences as $preference)   
                             <!--<p>{{ $preference}}</p>-->
                            
