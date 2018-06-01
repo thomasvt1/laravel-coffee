@@ -86,7 +86,7 @@ class DashController extends Controller
     public function deletePref(Request $request)
     {
         foreach ($preferences as $preference){
-            $request->input('checkbox' . $preference->cup_id)
+            $request->input('checkbox' . $preference->cup_id);
         }
         return back()->with('message', 'hallo'/*$request->input('box')*/.'.');
         
