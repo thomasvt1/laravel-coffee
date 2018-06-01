@@ -85,7 +85,7 @@ class DashController extends Controller
     public function deletePref(Request $request)
     {
 
-        return back()->with('message', 'hallo'/*$request->input('box').*/'.');
+        return back()->with('message', 'hallo'/*$request->input('box')*/.'.');
         
     }
 }
