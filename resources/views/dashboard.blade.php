@@ -35,7 +35,7 @@
                         {{ Form::select('startTime', $time, null, ['required', 'class' => 'form-control','placeholder' => 'Pick a start time']) }}
                         {{ Form::select('endTime', $time, null, ['required', 'class' => 'form-control','placeholder' => 'Pick a end time']) }}
 
-                        
+                        <br>
                         <p class="card-category">Choose your strength:</p>
                         {{ Form::input('range', 'strength') }}
 
