@@ -92,8 +92,8 @@ class DashController extends Controller
         foreach ($preferences as $preference){
             //$request->input('checkbox' . $preference->cup_id);
             $checkbox = strval('checkbox' . $preference->id);
-            if ($checkbox = 1){
-                \App\Preference::where('id','checkbox' . $preference->id)->delete();
+            if ($checkbox == 1){
+                \App\Preference::where('id', $preference->id)->delete();
             }
                 
             //$deleted +=  strval($request->input('checkbox' . $preference->cup_id));
