@@ -67,7 +67,7 @@ class DashController extends Controller
         $cup_volume = \App\Cup::where('id', $request->input('cup'))->value('volume');
         $drink_volume = \App\Drink::where('id', $request->input('drink'))->value('volume');
         if ($cup_volume >= $drink_volume) {
-            if ($startTime >= $endTime){
+            if ($request->input('startTime') >= $request->input('endTime')){
                 return back()->with('warning', "Your start time is bigger as your end time.');
             }else{
             //$request->input('cup') $request->input('drink')
