@@ -103,7 +103,7 @@ class DashController extends Controller
         if ($deleted != 0) {
             return back()->with('success',$deleted . 'preferences deleted.');
         } else {
-        return back()->with('warning', 'No preferences selected.');
-        
+            return back()->with('warning', 'No preferences selected.');
+        }
     }
 }
