@@ -61,7 +61,7 @@
                         {{Form::open(['route' => 'deletePrefCup'])}}
                         @foreach ($preferences as $preference)   
                             <!--<p>{{ $preference}}</p>-->
-                            {{ Form::checkbox($preference->cup_id) }}
+                            {{ Form::checkbox('checkbox' . $preference->cup_id) }}
                             Cup: {{$cups->firstWhere('id', $preference->cup_id)->name}} -- preference drink: {{$drinks->firstWhere('id', $preference->drink_id)->name}}  --  strength: {{(json_decode($preference->data,true))['strength']}} <br><br> 
                         @endforeach
                         <br>
