@@ -95,7 +95,7 @@ class DashController extends Controller
             //$deleted +=  strval($request->input('checkbox' . $preference->cup_id));
             //array_push($deleted, $request->input('checkbox' . $preference->cup_id));
         }
-        return back()->with('message', $checkbox/*$request->input('box')*/.'.');
+        return back()->with('message', $request->input($checkbox)/*$request->input('box')*/.'.');
         
     }
 }
