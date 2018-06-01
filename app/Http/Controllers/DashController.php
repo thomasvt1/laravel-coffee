@@ -91,7 +91,7 @@ class DashController extends Controller
         $deleted= "";
         foreach ($preferences as $preference){
             $request->input('checkbox' . $preference->cup_id);
-            $deleted +=  $request->input('checkbox' . $preference->cup_id);
+            $deleted +=  $request->input('checkbox' . strval($preference->cup_id));
             //array_push($deleted, $request->input('checkbox' . $preference->cup_id));
         }
         return back()->with('message', $deleted/*$request->input('box')*/.'.');
