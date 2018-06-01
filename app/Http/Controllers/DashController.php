@@ -89,10 +89,9 @@ class DashController extends Controller
         $user_cups = $cups->where('user_id', '=', Auth::user()->id);
         $preferences = \App\Preference::all()->whereIn('cup_id', $user_cups->pluck('id'));
         $deleted= "";
-        $checkbox = "";
         foreach ($preferences as $preference){
             //$request->input('checkbox' . $preference->cup_id);
-            $checkbox += strval('checkbox' . $preference->cup_id);
+            $checkbox = strval('checkbox' . $preference->cup_id);
             //$deleted +=  strval($request->input('checkbox' . $preference->cup_id));
             //array_push($deleted, $request->input('checkbox' . $preference->cup_id));
         }
