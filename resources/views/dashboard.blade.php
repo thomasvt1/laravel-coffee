@@ -7,12 +7,14 @@
 
     <div class="container-fluid">
     
-    @if(Session::has('message'))
-    
+    @if(Session::has('warning'))
         <div class="alert alert-warning">
-            {{Session::get('message')}}
+            {{Session::get('warning')}}
         </div>
-    
+    @elseif(Session::has('success'))
+        <div class="alert alert-success">
+            {{Session::get('success')}}
+        </div>
     @endif
     
     
