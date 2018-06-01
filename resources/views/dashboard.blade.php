@@ -6,6 +6,16 @@
 
 
     <div class="container-fluid">
+    
+    @if(Session::has('message'))
+    
+        <div class="alert alert-warning">
+            {{Session::get('message')}}
+        </div>
+    
+    @endif
+    
+    
         <div class="row">
             <div class="col-md-4">
                 <div class="card ">
