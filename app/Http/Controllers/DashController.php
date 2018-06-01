@@ -88,18 +88,22 @@ class DashController extends Controller
         $cups = \App\Cup::all();
         $user_cups = $cups->where('user_id', '=', Auth::user()->id);
         $preferences = \App\Preference::all()->whereIn('cup_id', $user_cups->pluck('id'));
-        $deleted= "";
+        $deleted= 0;
         foreach ($preferences as $preference){
             //$request->input('checkbox' . $preference->cup_id);
             $checkbox = strval('checkbox' . $preference->id);
             if ($request->input($checkbox) == 1){
                 \App\Preference::where('id', $preference->id)->delete();
+                $deleted += 1
             }
                 
             //$deleted +=  strval($request->input('checkbox' . $preference->cup_id));
             //array_push($deleted, $request->input('checkbox' . $preference->cup_id));
         }
-        return back()->with('message', $request->input($checkbox)/*$request->input('box')*/.'.');
+        if ($deleted != 0) {
+            return back()->with('success',$deleted . 'preferences deleted.');
+        } else {
+        return back()->with('warning', 'No preferences selected.');
         
     }
 }
