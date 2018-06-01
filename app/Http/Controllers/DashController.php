@@ -67,6 +67,9 @@ class DashController extends Controller
         $cup_volume = \App\Cup::where('id', $request->input('cup'))->value('volume');
         $drink_volume = \App\Drink::where('id', $request->input('drink'))->value('volume');
         if ($cup_volume >= $drink_volume) {
+            if ($startTime >= $endTime){
+                return back()->with('warning', "Your start time is bigger as your end time.');
+            }else{
             //$request->input('cup') $request->input('drink')
           
             $preference = \App\Preference::where('cup_id', $request->input('cup'))->first();
@@ -78,6 +81,7 @@ class DashController extends Controller
             //\App\Preference::where('id', '=', $request->input('cup'))->update(array('data' =>json_encode($preference_data)));
             \App\Preference::insert(['cup_id' => $request->input('cup'), 'drink_id' => $request->input('drink'), 'data' => json_encode($preference_data)]);
             return back()->with('success', 'Preference updated successfully.');
+            }
         } else {
             return back()->with('warning', "Your choice is too big for the selected cup. Cup volume: " . $cup_volume . ' drink volume: ' . $drink_volume . '.');
         }
@@ -101,7 +105,7 @@ class DashController extends Controller
             //array_push($deleted, $request->input('checkbox' . $preference->cup_id));
         }
         if ($deleted != 0) {
-            return back()->with('success',$deleted . 'preferences deleted.');
+            return back()->with('success',$deleted . ' preferences deleted.');
         } else {
             return back()->with('warning', 'No preferences selected.');
         }
