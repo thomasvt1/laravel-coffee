@@ -51,6 +51,7 @@ class DashController extends Controller
             array_push($time, sprintf('%0' . 2 . 's', $hours) . ':' . sprintf('%0' . 2 . 's', $minutes));
         }
         
+        
         return view('dashboard', ['user_cups' => $user_cups, 'cups' => $cups, 'users' => $users, 'machines' => $machines, 'drinks' => $drinks, 'preferences' => $preferences, 'time' => $time]);
 
     }
@@ -84,7 +85,9 @@ class DashController extends Controller
     
     public function deletePref(Request $request)
     {
-
+        @foreach ($preferences as $preference)
+            $request->input('checkbox' . $preference->cup_id)
+        @endforeach
         return back()->with('message', 'hallo'/*$request->input('box')*/.'.');
         
     }
