@@ -85,6 +85,8 @@ class DashController extends Controller
     
     public function deletePref(Request $request)
     {
+        $cups = \App\Cup::all();
+        $user_cups = $cups->where('user_id', '=', Auth::user()->id);
         $preferences = \App\Preference::all()->whereIn('cup_id', $user_cups->pluck('id'));
         foreach ($preferences as $preference){
             $request->input('checkbox' . $preference->cup_id);
