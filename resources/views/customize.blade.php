@@ -6,8 +6,19 @@
 
 
     <div class="container-fluid">
+    
+        @if(Session::has('warning'))
+            <div class="alert alert-warning">
+                {{Session::get('warning')}}
+            </div>
+        @elseif(Session::has('success'))
+             <div class="alert alert-success">
+             {{Session::get('success')}}
+            </div>
+        @endif
+    
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <div class="card ">
                     <div class="card-header ">
                         <h4 class="card-title">Name mug</h4>
