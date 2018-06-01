@@ -90,11 +90,12 @@ class DashController extends Controller
         $preferences = \App\Preference::all()->whereIn('cup_id', $user_cups->pluck('id'));
         $deleted= "";
         foreach ($preferences as $preference){
-            $request->input('checkbox' . $preference->cup_id);
-            $deleted +=  strval($request->input('checkbox' . $preference->cup_id));
+            //$request->input('checkbox' . $preference->cup_id);
+            $checkbox = strval($request->input('checkbox' . $preference->cup_id));
+            //$deleted +=  strval($request->input('checkbox' . $preference->cup_id));
             //array_push($deleted, $request->input('checkbox' . $preference->cup_id));
         }
-        return back()->with('message', $deleted/*$request->input('box')*/.'.');
+        return back()->with('message', $checkbox/*$request->input('box')*/.'.');
         
     }
 }
