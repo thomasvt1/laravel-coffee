@@ -66,7 +66,6 @@ class DashController extends Controller
 
         $cup_volume = \App\Cup::where('id', $request->input('cup'))->value('volume');
         $drink_volume = \App\Drink::where('id', $request->input('drink'))->value('volume');
-        $preferences = \App\Preference::all()->whereIn('cup_id', $user_cups->pluck('id'));
         if ($cup_volume >= $drink_volume) {
             //$request->input('cup') $request->input('drink')
           
@@ -86,6 +85,7 @@ class DashController extends Controller
     
     public function deletePref(Request $request)
     {
+        $preferences = \App\Preference::all()->whereIn('cup_id', $user_cups->pluck('id'));
         foreach ($preferences as $preference){
             $request->input('checkbox' . $preference->cup_id);
         }
