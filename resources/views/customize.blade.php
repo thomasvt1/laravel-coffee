@@ -50,7 +50,7 @@
                         <p class="card-category"></p>
                     </div>
                     <div class="card-body ">
-                        {{//$drinks->firstWhere('id', $preference->drink_id)->name}}
+                        Cup content TODO
                     </div>
                 </div>
             </div>
