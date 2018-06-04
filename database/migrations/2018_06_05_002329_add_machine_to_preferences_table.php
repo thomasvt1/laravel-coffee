@@ -27,7 +27,6 @@ class AddMachineToPreferencesTable extends Migration
     public function down()
     {
         Schema::table('preferences', function (Blueprint $table) {
-            $table->dropForeign('preferences_machine_id_foreign');
             $table->dropColumn('machine_id');
         });
     }
