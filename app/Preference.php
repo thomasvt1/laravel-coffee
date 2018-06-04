@@ -16,4 +16,9 @@ class Preference extends Model
     {
         return $this->belongsTo('App\Drink');
     }
+
+    public function times()
+    {
+        return $this->hasMany('App\PreferenceTimes');
+    }
 }
