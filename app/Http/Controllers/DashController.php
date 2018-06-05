@@ -81,50 +81,46 @@ class DashController extends Controller
         $cup_volume = \App\Cup::where('id', $request->input('cup'))->value('volume');
         $drink_volume = \App\Drink::where('id', $request->input('drink'))->value('volume');
         if ($cup_volume >= $drink_volume) {
-            if (($request->input('startTime')) >= ($request->input('endTime'))){
-                return back()->with('warning', "Your start time is bigger than your end time.");
-            }else{
-            //$request->input('cup') $request->input('drink')
-            $preference = \App\Preference::where('cup_id', $request->input('cup'))->first();
-            if ($preference != ""){            
-                $preference_data = json_decode($preference->data, true);
-            }
-            $preference_data['strength'] = $request->input('strength');
             
-            //$days = ['mon','tue','wed','thu','fri','sat','sun'];
-            $days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
-            $selected_day='';
-            $first_time = 1;
-            foreach ($days as $day){
-            //$request->input('checkbox' . $preference->cup_id);
+            if (($request->input('startTime')) > ($request->input('endTime'))){
+                               
+                $preference = \App\Preference::where('cup_id', $request->input('cup'))->first();
             
-                $checkbox = strval('checkbox' . $day);
-                if ($request->input($checkbox) == 1){
-                    if ($first_time == 1){
-                        $selected_day = substr($day, 0, 3);
-                        $first_time = 0;
-                    }else{
-                        $selected_day = $selected_day . ', ' . substr($day, 0, 3);  
-                    }                     
-                      
+                if ($preference != ""){            
+                    $preference_data = json_decode($preference->data, true);
                 }
+            
+                $preference_data['strength'] = $request->input('strength');            
+                $days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+                $selected_day='';
+                $first_time = 1;
+                foreach ($days as $day){
+            
+                    $checkbox = strval('checkbox' . $day);
+                    if ($request->input($checkbox) == 1){
+                        if ($first_time == 1){
+                            $selected_day = substr($day, 0, 3);
+                            $first_time = 0;
+                        }else{
+                            $selected_day = $selected_day . ', ' . substr($day, 0, 3);  
+                        }                      
+                    }
+                }
+
+                \App\Preference::insert(['cup_id' => $request->input('cup'), 'drink_id' => $request->input('drink'), 'data' => json_encode($preference_data), 'machine_id' => $request->input('location')]);
+                $max_id = \App\Preference::all()->max('id');
+                \App\PreferenceTimes::insert(['preference_id' => $max_id, 'days' => $selected_day, 'start_time' => $time[$request->input('startTime')], 'end_time' => $time[$request->input('endTime')]]);
+                return back()->with('success', 'Preference updated successfully.');
                 
+            }else{
+                return back()->with('warning', "Your start time is bigger than your end time.");
             }
-            //\App\Preference::where('id', '=', $request->input('cup'))->update(array('drink_id' => $request->input('drink')));
-            //\App\Preference::where('id', '=', $request->input('cup'))->update(array('data' =>json_encode($preference_data)));
-            \App\Preference::insert(['cup_id' => $request->input('cup'), 'drink_id' => $request->input('drink'), 'data' => json_encode($preference_data), 'machine_id' => $request->input('location')]);
-            $max_id = \App\Preference::all()->max('id');
             
-            //$request->input('startTime')
-            
-            
-            \App\PreferenceTimes::insert(['preference_id' => $max_id, 'days' => $selected_day, 'start_time' => $time[$request->input('startTime')], 'end_time' => $time[$request->input('endTime')]]);
-            return back()->with('success', 'Preference updated successfully.');
-            }
         } else {
             return back()->with('warning', "Your choice is too big for the selected cup. Cup volume: " . $cup_volume . ' drink volume: ' . $drink_volume . '.');
         }
     }
+    
     
     public function deletePref(Request $request)
     {
@@ -133,7 +129,6 @@ class DashController extends Controller
         $preferences = \App\Preference::all()->whereIn('cup_id', $user_cups->pluck('id'));
         $deleted= 0;
         foreach ($preferences as $preference){
-            //$request->input('checkbox' . $preference->cup_id);
             $checkbox = strval('checkbox' . $preference->id);
             if ($request->input($checkbox) == 1){ 
                 \App\PreferenceTimes::where('preference_id', $preference->id)->delete();
@@ -141,9 +136,6 @@ class DashController extends Controller
                
                 $deleted += 1; 
             }
-                
-            //$deleted +=  strval($request->input('checkbox' . $preference->cup_id));
-            //array_push($deleted, $request->input('checkbox' . $preference->cup_id));
         }
         if ($deleted != 0) {
             return back()->with('success',$deleted . ' preferences deleted.');
@@ -151,4 +143,7 @@ class DashController extends Controller
             return back()->with('warning', 'No preferences selected.');
         }
     }
-}
+}            
+
+//\App\Preference::where('id', '=', $request->input('cup'))->update(array('drink_id' => $request->input('drink')));
+//\App\Preference::where('id', '=', $request->input('cup'))->update(array('data' =>json_encode($preference_data)));
