@@ -36,6 +36,7 @@
                         {{ Form::select('endTime', $time, null, ['required', 'class' => 'form-control','placeholder' => 'Pick a end time']) }}
                         
                         Choose the days you want this preference
+                        <br>
                         @foreach ($days as $day)   
                             {{ Form::checkbox('checkbox' . $day) }}
                                 {{$day}}
