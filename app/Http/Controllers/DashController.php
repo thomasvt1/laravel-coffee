@@ -112,9 +112,10 @@ class DashController extends Controller
         foreach ($preferences as $preference){
             //$request->input('checkbox' . $preference->cup_id);
             $checkbox = strval('checkbox' . $preference->id);
-            if ($request->input($checkbox) == 1){
-                \App\Preference::where('id', $preference->id)->delete();
+            if ($request->input($checkbox) == 1){ 
                 \App\PreferenceTimes::where('id', $preference->id)->delete();
+                \App\Preference::where('id', $preference->id)->delete();
+               
                 $deleted += 1; 
             }
                 
