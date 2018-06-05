@@ -85,12 +85,9 @@ class DashController extends Controller
                 return back()->with('warning', "Your start time is bigger than your end time.");
             }else{
             //$request->input('cup') $request->input('drink')
-            try {
-                $preference = \App\Preference::where('cup_id', $request->input('cup'))->first();
-                $preference_data = json_decode($preference->data, true);
-            } catch (Exception $e) {
-                return back()->with('warning', "try catch error");
-            }
+            //$preference = \App\Preference::where('cup_id', $request->input('cup'))->first();
+            //$preference_data = json_decode($preference->data, true);
+            
             $preference_data['strength'] = $request->input('strength');
             
             //\App\Preference::where('id', '=', $request->input('cup'))->update(array('drink_id' => $request->input('drink')));
