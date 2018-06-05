@@ -104,7 +104,7 @@ class DashController extends Controller
             \App\Preference::insert(['cup_id' => $request->input('cup'), 'drink_id' => $request->input('drink'), 'data' => json_encode($preference_data), 'machine_id' => $request->input('location')]);
             $max_id = \App\Preference::all()->max('id');
             
-            $request->input('startTime')
+            //$request->input('startTime')
             
             
             \App\PreferenceTimes::insert(['preference_id' => $max_id, 'days' => 'mon', 'start_time' => $time[$request->input('startTime')], 'end_time' => $time[$request->input('endTime')]]);
