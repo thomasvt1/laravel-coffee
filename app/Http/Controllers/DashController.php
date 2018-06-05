@@ -91,10 +91,22 @@ class DashController extends Controller
             }
             $preference_data['strength'] = $request->input('strength');
             
+            $days = ['mon','tue','wed','thu','fri','sat','sun'];
+            $selected_day = array();
+            foreach ($days as $day){
+            //$request->input('checkbox' . $preference->cup_id);
+                if ($checkbox = strval('checkbox' . $day)== 1){
+                    array_push($selected_day, $day);  
+                }
+            }
             //\App\Preference::where('id', '=', $request->input('cup'))->update(array('drink_id' => $request->input('drink')));
             //\App\Preference::where('id', '=', $request->input('cup'))->update(array('data' =>json_encode($preference_data)));
             \App\Preference::insert(['cup_id' => $request->input('cup'), 'drink_id' => $request->input('drink'), 'data' => json_encode($preference_data), 'machine_id' => $request->input('location')]);
             $max_id = \App\Preference::all()->max('id');
+            
+            $request->input('startTime')
+            
+            
             \App\PreferenceTimes::insert(['preference_id' => $max_id, 'days' => 'mon', 'start_time' => $time[$request->input('startTime')], 'end_time' => $time[$request->input('endTime')]]);
             return back()->with('success', 'Preference updated successfully.');
             }
