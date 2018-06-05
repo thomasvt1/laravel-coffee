@@ -34,6 +34,8 @@
                         {{ Form::select('drink', $drinks->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a drink']) }}
                         {{ Form::select('startTime', $time, null, ['required', 'class' => 'form-control','placeholder' => 'Pick a start time']) }}
                         {{ Form::select('endTime', $time, null, ['required', 'class' => 'form-control','placeholder' => 'Pick a end time']) }}
+                        
+                        Choose the days you want this preference
                         @foreach ($days as $day)   
                             {{ Form::checkbox('checkbox' . $day) }}
                                 {{$day}}
