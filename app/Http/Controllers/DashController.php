@@ -86,12 +86,10 @@ class DashController extends Controller
             }else{
             //$request->input('cup') $request->input('drink')
             try {
-
-
                 $preference = \App\Preference::where('cup_id', $request->input('cup'))->first();
                 $preference_data = json_decode($preference->data, true);
             } catch (Exception $e) {
-                return back()->with('warning', "Your choice is too big for the selected cup. Cup volume: " . $cup_volume . ' drink volume: ' . $drink_volume . '.');
+                return back()->with('warning', "try catch error");
             }
             $preference_data['strength'] = $request->input('strength');
             
