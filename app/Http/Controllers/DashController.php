@@ -63,7 +63,21 @@ class DashController extends Controller
     {
         //of gekozen drank volume <= gekozen cup volume
         //$cup_volume = \App\Cup::where('cup_id', '=', $request->input('cup');
-
+        $time= array();
+        $hours= 00;
+        $minutes =00;
+        array_push($time,'00:00');
+        
+        for ($x = 0; $x <= 46; $x++){
+            
+            $minutes = $minutes + 30;
+            
+            if ($minutes == 60){
+                $hours++;
+                $minutes = 00;
+            }            
+            array_push($time, sprintf('%0' . 2 . 's', $hours) . ':' . sprintf('%0' . 2 . 's', $minutes));
+        }
         $cup_volume = \App\Cup::where('id', $request->input('cup'))->value('volume');
         $drink_volume = \App\Drink::where('id', $request->input('drink'))->value('volume');
         if ($cup_volume >= $drink_volume) {
@@ -81,7 +95,7 @@ class DashController extends Controller
             //\App\Preference::where('id', '=', $request->input('cup'))->update(array('data' =>json_encode($preference_data)));
             \App\Preference::insert(['cup_id' => $request->input('cup'), 'drink_id' => $request->input('drink'), 'data' => json_encode($preference_data), 'machine_id' => $request->input('location')]);
             $max_id = \App\Preference::all()->max('id');
-            \App\PreferenceTimes::insert(['preference_id' => $max_id, 'days' => 'mon', 'start_time' => $request->input('startTime'), 'end_time' => $request->input('endTime')]);
+            \App\PreferenceTimes::insert(['preference_id' => $max_id, 'days' => 'mon', 'start_time' => $time[$request->input('startTime')], 'end_time' => $request->input('endTime')]);
             return back()->with('success', 'Preference updated successfully.');
             }
         } else {
