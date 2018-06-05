@@ -34,7 +34,7 @@ class DashController extends Controller
         $machines = \App\Machine::all();
         $drinks = \App\Drink::all();
         $preferences = \App\Preference::all()->whereIn('cup_id', $user_cups->pluck('id'));
-        #$days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+        $days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
         $time= array();
         $hours= 00;
         $minutes =00;
@@ -52,7 +52,7 @@ class DashController extends Controller
         }
         
         
-        return view('dashboard', ['user_cups' => $user_cups, 'cups' => $cups, 'users' => $users, 'machines' => $machines, 'drinks' => $drinks, 'preferences' => $preferences, 'time' => $time/*, 'days' => $days*/]);
+        return view('dashboard', ['user_cups' => $user_cups, 'cups' => $cups, 'users' => $users, 'machines' => $machines, 'drinks' => $drinks, 'preferences' => $preferences, 'time' => $time, 'days' => $days]);
 
     }
     
