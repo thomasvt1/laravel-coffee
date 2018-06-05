@@ -88,7 +88,7 @@ class DashController extends Controller
             try {
                 $preference = \App\Preference::where('cup_id', $request->input('cup'))->first();
                 $preference_data = json_decode($preference->data, true);
-            } catch (Exception $e) {
+            } catch () {
                 return back()->with('warning', "try catch error");
             }
             $preference_data['strength'] = $request->input('strength');
