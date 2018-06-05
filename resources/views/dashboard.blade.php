@@ -36,7 +36,7 @@
                         {{ Form::select('endTime', $time, null, ['required', 'class' => 'form-control','placeholder' => 'Pick a end time']) }}
                         @foreach ($days as $day)   
                             {{ Form::checkbox('checkbox' . $day) }}
-                            $day
+                                {{$day}}
                             <br> 
                         @endforeach
                         <br>
