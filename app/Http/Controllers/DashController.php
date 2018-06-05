@@ -80,6 +80,8 @@ class DashController extends Controller
             //\App\Preference::where('id', '=', $request->input('cup'))->update(array('drink_id' => $request->input('drink')));
             //\App\Preference::where('id', '=', $request->input('cup'))->update(array('data' =>json_encode($preference_data)));
             \App\Preference::insert(['cup_id' => $request->input('cup'), 'drink_id' => $request->input('drink'), 'data' => json_encode($preference_data)]);
+            $max_id = \App\Preference::all()->max('id');
+            \App\Preference_time::insert(['preference_id' => $max_id;
             return back()->with('success', 'Preference updated successfully.');
             }
         } else {
