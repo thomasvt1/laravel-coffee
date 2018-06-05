@@ -34,11 +34,11 @@
                         {{ Form::select('drink', $drinks->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a drink']) }}
                         {{ Form::select('startTime', $time, null, ['required', 'class' => 'form-control','placeholder' => 'Pick a start time']) }}
                         {{ Form::select('endTime', $time, null, ['required', 'class' => 'form-control','placeholder' => 'Pick a end time']) }}
-                        @foreach ($days as $day)   
-                            <!--<p>{{ $preference}}</p>-->
+                       <!-- @foreach ($days as $day)   
+                            <p>{{ $preference}}</p>
                             {{ Form::checkbox('checkbox' . $day) }}
                             <br> 
-                        @endforeach
+                        @endforeach-->
                         <br>
                         <p class="card-category">Choose your strength:</p>
                         {{ Form::input('range', 'strength') }}
