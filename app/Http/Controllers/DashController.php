@@ -95,7 +95,9 @@ class DashController extends Controller
             $selected_day='';
             foreach ($days as $day){
             //$request->input('checkbox' . $preference->cup_id);
-                if ($checkbox = strval('checkbox' . $day)== 1){
+            
+            $checkbox = strval('checkbox' . $day);
+                if ($request->input($checkbox) == 1){
                     $selected_day =+ ', ' . $day;  
                 }
                 return back()->with('success', $selected_day);
