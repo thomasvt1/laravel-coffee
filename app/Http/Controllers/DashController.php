@@ -84,7 +84,7 @@ class DashController extends Controller
             if (($request->input('startTime')) >= ($request->input('endTime'))){
                 return back()->with('warning', "Your start time is bigger than your end time.");
             }else{
-            $request->input('cup') $request->input('drink')
+            //$request->input('cup') $request->input('drink')
             $preference = \App\Preference::where('cup_id', $request->input('cup'))->first();
             if ($preference_data != ""){            
                 $preference_data = json_decode($preference->data, true);
