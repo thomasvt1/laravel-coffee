@@ -100,8 +100,9 @@ class DashController extends Controller
                 if ($request->input($checkbox) == 1){
                     $selected_day =+ ', ' . $day;  
                 }
-                return back()->with('success', $selected_day);
+                
             }
+            return back()->with('success', $selected_day);
             //\App\Preference::where('id', '=', $request->input('cup'))->update(array('drink_id' => $request->input('drink')));
             //\App\Preference::where('id', '=', $request->input('cup'))->update(array('data' =>json_encode($preference_data)));
             \App\Preference::insert(['cup_id' => $request->input('cup'), 'drink_id' => $request->input('drink'), 'data' => json_encode($preference_data), 'machine_id' => $request->input('location')]);
