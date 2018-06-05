@@ -92,11 +92,11 @@ class DashController extends Controller
             $preference_data['strength'] = $request->input('strength');
             
             $days = ['mon','tue','wed','thu','fri','sat','sun'];
-            $selected_day;
+            $selected_day='';
             foreach ($days as $day){
             //$request->input('checkbox' . $preference->cup_id);
             
-            $checkbox = strval('checkbox' . $day);
+                $checkbox = strval('checkbox' . $day);
                 if ($request->input($checkbox) == 1){
                     $selected_day =+ ', ' . $day;  
                 }
