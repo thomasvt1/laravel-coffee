@@ -99,7 +99,7 @@ class DashController extends Controller
             
                 $checkbox = strval('checkbox' . $day);
                 if ($request->input($checkbox) == 1){
-                    $selected_day =+ ', ' . $day;  
+                    $selected_day = $selected_day . ', ' . $day;  
                 }
                 
             }
