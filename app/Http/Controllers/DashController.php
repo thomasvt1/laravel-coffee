@@ -94,12 +94,19 @@ class DashController extends Controller
             //$days = ['mon','tue','wed','thu','fri','sat','sun'];
             $days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
             $selected_day='';
+            $first_time = 1;
             foreach ($days as $day){
             //$request->input('checkbox' . $preference->cup_id);
             
                 $checkbox = strval('checkbox' . $day);
                 if ($request->input($checkbox) == 1){
-                    $selected_day = $selected_day . ', ' . substr($day, 0, 3);  
+                    if ($first_time == 1){
+                        $selected_day = substr($day, 0, 3);
+                        $first_time = 0;
+                    }else{
+                        $selected_day = $selected_day . ', ' . substr($day, 0, 3);  
+                    }                     
+                      
                 }
                 
             }
