@@ -58,24 +58,18 @@
                 </div>
 
             </div>
-            <div class="col-md-8">
-                <div class="card ">
-                    <div class="card-header ">
-                        <h4 class="card-title">Your preferences</h4>
-                        <p class="card-category"></p>
-                    </div>
-                    <div class="card-body ">
+
                         {{Form::open(['route' => 'deletePrefCup'])}}
                         @foreach ($preferences as $preference)   
                             <!--<p>{{ $preference}}</p>-->
                             {{ Form::checkbox('checkbox' . $preference->id)}} {{ $cups->firstWhere('id', $preference->cup_id)->name}}
                                         <div class="col-md-3">
                                             <div class="card ">
-                                              <!--  <div class="card-header ">
+                                                <div class="card-header ">
                                                     <h4 class="card-title">{{$cups->firstWhere('id', $preference->cup_id)->name}}</h4>
                         
                                                     <p class="card-category"></p>
-                                                </div>-->
+                                                </div>
                                                 <div class="card-body ">
                                                     preference drink: {{$drinks->firstWhere('id', $preference->drink_id)->name}} <br>
                                                     strength: {{(json_decode($preference->data,true))['strength']}}
@@ -90,9 +84,7 @@
                         {{Session::get('message')}}
                         {{ Form::close() }}
                         
-                    </div>
-                </div>
-            </div>
+
            @foreach ($preferences as $preference)
             
             <div class="col-md-3">
