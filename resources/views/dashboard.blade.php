@@ -68,7 +68,7 @@
                         {{Form::open(['route' => 'deletePrefCup'])}}
                         @foreach ($preferences as $preference)   
                             <!--<p>{{ $preference}}</p>-->
-                            {{ Form::checkbox('checkbox' . $preference->id) }}
+                            {{ Form::checkbox('checkbox' . $preference->id) $cups->firstWhere('id', $preference->cup_id)->name}}
                                         <div class="col-md-3">
                                             <div class="card ">
                                                 <div class="card-header ">
