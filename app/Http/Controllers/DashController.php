@@ -125,7 +125,7 @@ class DashController extends Controller
                 \App\PreferenceTimes::insert(['preference_id' => $max_id, 'days' => $selected_day, 'start_time' => $startTime, 'end_time' => $endTime]);
                 return back()->with('success', 'Preference updated successfully.');
             } else {
-                \App\PreferenceTimes::insert(['preference_id' => $max_id, 'days' => $selected_day, 'start_time' => $time["00:00"], 'end_time' => $time["23:30"]]);
+                \App\PreferenceTimes::insert(['preference_id' => $max_id, 'days' => $selected_day, 'start_time' => $time[0], 'end_time' => $time[46]]);
                 return back()->with('success', 'Preference updated successfully.');
             }
             
