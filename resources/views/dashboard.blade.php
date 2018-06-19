@@ -58,7 +58,7 @@
                 </div>
 
             </div>
-                        YOUR PREFERENCES <br>
+                        YOUR PREFERENCES <br> <br>
                         {{Form::open(['route' => 'deletePrefCup'])}}
                         @foreach ($preferences as $preference)   
                             <!--<p>{{ $preference}}</p>
@@ -87,23 +87,7 @@
                         {{ Form::close() }}
                         
             
-           @foreach ($preferences as $preference)
-            
-            <div class="col-md-3">
-                <div class="card ">
-                    <div class="card-header ">
-                        <h4 class="card-title">{{$cups->firstWhere('id', $preference->cup_id)->name}}</h4>
-                        
-                        <p class="card-category"></p>
-                    </div>
-                    <div class="card-body ">
-                        preference drink: {{$drinks->firstWhere('id', $preference->drink_id)->name}} <br>
-                        strength: {{(json_decode($preference->data,true))['strength']}}
-                    </div>
-                </div>
-            </div>
-            
-            @endforeach
+           
             
         </div>
     </div>
