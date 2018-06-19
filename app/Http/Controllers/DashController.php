@@ -82,7 +82,7 @@ class DashController extends Controller
         $drink_volume = \App\Drink::where('id', $request->input('drink'))->value('volume');
         if ($cup_volume >= $drink_volume) {
             
-            if (($request->input('startTime')) < ($request->input('endTime'))){
+            if (($request->input('startTime')) < ($request->input('endTime')) || (isset($request->input('startTime')) && isset($request->input('endTime'))){
                                
                 $preference = \App\Preference::where('cup_id', $request->input('cup'))->first();
             
