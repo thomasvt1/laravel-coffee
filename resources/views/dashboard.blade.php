@@ -22,7 +22,7 @@
             <div class="col-md-4">
                 <div class="card ">
                     <div class="card-header ">
-                        <h4 class="card-title">Change preference</h4>
+                        <h4 class="card-title" style="color:Tomato">Change preference</h4>
                         <p class="card-category">Here it is possible to change your preference</p>
                         <p class="card-category">Things with a * are required.</p>
                     </div>
@@ -30,13 +30,13 @@
                            
                         {{Form::open(['route' => 'updateCup'])}}
                           
-                        {{ Form::select('location', $machines->pluck('location', 'id'), null, ['required', 'class' => 'form-control','placeholder' => '* Pick a location']) }}
-                        {{ Form::select('cup', $user_cups->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => '* Pick a cup']) }}
-                        {{ Form::select('drink', $drinks->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => '* Pick a drink']) }}
+                        {{ Form::select('location', $machines->pluck('location', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a location *']) }}
+                        {{ Form::select('cup', $user_cups->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a cup *']) }}
+                        {{ Form::select('drink', $drinks->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a drink *']) }}
                         {{ Form::select('startTime', $time, null, ['class' => 'form-control','placeholder' => 'Pick a start time']) }}
                         {{ Form::select('endTime', $time, null, ['class' => 'form-control','placeholder' => 'Pick a end time']) }}
                         <br>
-                        * Choose the days you want this preference
+                        Choose the days you want this preference *
                         <br>
                         @foreach ($days as $day)   
                             {{ Form::checkbox('checkbox' . $day) }}
