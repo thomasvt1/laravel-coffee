@@ -32,8 +32,8 @@
                         {{ Form::select('location', $machines->pluck('location', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a location']) }}
                         {{ Form::select('cup', $user_cups->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a cup']) }}
                         {{ Form::select('drink', $drinks->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a drink']) }}
-                        {{ Form::select('startTime', $time, null, ['required', 'class' => 'form-control','placeholder' => 'Pick a start time']) }}
-                        {{ Form::select('endTime', $time, null, ['required', 'class' => 'form-control','placeholder' => 'Pick a end time']) }}
+                        {{ Form::select('startTime', $time, null, ['class' => 'form-control','placeholder' => 'Pick a start time']) }}
+                        {{ Form::select('endTime', $time, null, ['class' => 'form-control','placeholder' => 'Pick a end time']) }}
                         <br>
                         Choose the days you want this preference
                         <br>
