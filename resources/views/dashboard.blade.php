@@ -80,12 +80,12 @@
                     </div>
                 </div>
             </div>
-           @foreach ($user_cups as $cup)
+           @foreach ($preferences as $preference)
             
             <div class="col-md-2">
                 <div class="card ">
                     <div class="card-header ">
-                        <h4 class="card-title">{{$cup->name}}</h4>
+                        <h4 class="card-title">{{$cups->firstWhere('id', $preference->cup_id)->name}}</h4>
                         <p class="card-category"></p>
                     </div>
                     <div class="card-body ">
