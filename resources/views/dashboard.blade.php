@@ -64,7 +64,7 @@
                         @foreach ($preferences as $preference)   
                             <!--<p>{{ $preference}}</p>
                             {{ $cups->firstWhere('id', $preference->cup_id)->name}}-->
-                                        <div class="col-md-16">
+                                        <div class="col-md-10">
                                             <div class="card ">
                                                 <div class="card-header "> 
                                                     
