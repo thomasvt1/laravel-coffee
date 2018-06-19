@@ -84,7 +84,7 @@
                         {{Session::get('message')}}
                         {{ Form::close() }}
                         
-
+            {{Form::open(['route' => 'deletePrefCup'])}}
            @foreach ($preferences as $preference)
             
             <div class="col-md-3">
@@ -102,6 +102,7 @@
             </div>
             
             @endforeach
+            {{ Form::close() }}
         </div>
     </div>
 @endsection
