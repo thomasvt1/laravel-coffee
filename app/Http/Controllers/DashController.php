@@ -82,38 +82,51 @@ class DashController extends Controller
         $drink_volume = \App\Drink::where('id', $request->input('drink'))->value('volume');
         if ($cup_volume >= $drink_volume) {
             
-            if (($request->input('startTime')) < ($request->input('endTime')) || isset($request->input('startTime')) && isset($request->input('endTime'))){
-                               
-                $preference = \App\Preference::where('cup_id', $request->input('cup'))->first();
-            
-                if ($preference != ""){            
-                    $preference_data = json_decode($preference->data, true);
+            if($request->has('startTime') && $request->has('endTime')) {
+                if ($request->input('startTime') < $request->input('endTime')){
+                    
+                    $startTime = $time[$request->input('startTime')];
+                    $endTime = $time[$request->input('endTime')];
+                }else{
+                    return back()->with('warning', "Your start time is bigger than your end time.");
                 }
+            }
             
-                $preference_data['strength'] = $request->input('strength');            
-                $days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
-                $selected_day='';
-                $first_time = 1;
-                foreach ($days as $day){
-            
-                    $checkbox = strval('checkbox' . $day);
-                    if ($request->input($checkbox) == 1){
-                        if ($first_time == 1){
-                            $selected_day = substr($day, 0, 3);
-                            $first_time = 0;
-                        }else{
-                            $selected_day = $selected_day . ', ' . substr($day, 0, 3);  
-                        }                      
-                    }
-                }
+            $preference = \App\Preference::where('cup_id', $request->input('cup'))->first();
 
-                \App\Preference::insert(['cup_id' => $request->input('cup'), 'drink_id' => $request->input('drink'), 'data' => json_encode($preference_data), 'machine_id' => $request->input('location')]);
-                $max_id = \App\Preference::all()->max('id');
-                \App\PreferenceTimes::insert(['preference_id' => $max_id, 'days' => $selected_day, 'start_time' => $time[$request->input('startTime')], 'end_time' => $time[$request->input('endTime')]]);
+            if ($preference != ""){            
+                $preference_data = json_decode($preference->data, true);
+            }
+
+            $preference_data['strength'] = $request->input('strength');            
+            $days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+            $selected_day='';
+            $first_time = 1;
+            foreach ($days as $day){
+
+                $checkbox = strval('checkbox' . $day);
+                if ($request->input($checkbox) == 1){
+                    if ($first_time == 1){
+                        $selected_day = substr($day, 0, 3);
+                        $first_time = 0;
+                    }else{
+                        $selected_day = $selected_day . ', ' . substr($day, 0, 3);  
+                    }                      
+                }
+            }
+            if($first_time == 1) {
+                $selected_days = "mon,tue,wed,thu,fri,sat,sun";
+            }
+
+            $insertedPreference = \App\Preference::insert(['cup_id' => $request->input('cup'), 'drink_id' => $request->input('drink'), 'data' => json_encode($preference_data), 'machine_id' => $request->input('location')]);
+            $max_id = \App\Preference::all()->max('id');
+            
+            if(isset($startTime) && isset($endTime)) {
+                \App\PreferenceTimes::insert(['preference_id' => $insertedPreference->id, 'days' => $selected_day, 'start_time' => $startTime, 'end_time' => $endTime]);
                 return back()->with('success', 'Preference updated successfully.');
-                
-            }else{
-                return back()->with('warning', "Your start time is bigger than your end time.");
+            } else {
+                \App\PreferenceTimes::insert(['preference_id' => $insertedPreference->id, 'days' => $selected_day]);
+                return back()->with('success', 'Preference updated successfully.');
             }
             
         } else {
