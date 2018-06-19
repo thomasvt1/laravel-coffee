@@ -114,8 +114,8 @@ class DashController extends Controller
                     }                      
                 }
             }
-            if($first_time == 1) {
-                $selected_days = "mon,tue,wed,thu,fri,sat,sun";
+            if($selected_day == '') {
+                $selected_day = "Mon,Tue,Wed,Thu,Fri,Sat,Sun";
             }
 
             $insertedPreference = \App\Preference::insert(['cup_id' => $request->input('cup'), 'drink_id' => $request->input('drink'), 'data' => json_encode($preference_data), 'machine_id' => $request->input('location')]);
@@ -125,7 +125,7 @@ class DashController extends Controller
                 \App\PreferenceTimes::insert(['preference_id' => $max_id, 'days' => $selected_day, 'start_time' => $startTime, 'end_time' => $endTime]);
                 return back()->with('success', 'Preference updated successfully.');
             } else {
-                \App\PreferenceTimes::insert(['preference_id' => $max_id, 'days' => $selected_day, 'start_time' => $time[0], 'end_time' => $time[46]]);
+                \App\PreferenceTimes::insert(['preference_id' => $max_id, 'days' => $selected_day, 'start_time' => $time[0], 'end_time' => $time[47]]);
                 return back()->with('success', 'Preference updated successfully.');
             }
             
