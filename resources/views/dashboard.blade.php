@@ -60,11 +60,11 @@
             </div>
                         
                         {{Form::open(['route' => 'deletePrefCup'])}}
-                        <h4> YOUR PREFERENCES </h4> <br> <br>
+                        <h4> YOUR PREFERENCES </h4>
                         @foreach ($preferences as $preference)   
                             <!--<p>{{ $preference}}</p>
                             {{ $cups->firstWhere('id', $preference->cup_id)->name}}-->
-                                        <div class="col-md-12">
+                                        <!--<div class="col-md-12">-->
                                             <div class="card ">
                                                 <div class="card-header "> 
                                                     
@@ -78,7 +78,7 @@
                                                     {{ Form::checkbox('checkbox' . $preference->id)}} Select to delete
                                                 </div>
                                             </div>
-                                        </div>
+                                        <!--</div>-->
                            <!-- Cup: {{$cups->firstWhere('id', $preference->cup_id)->name}} -- preference drink: {{$drinks->firstWhere('id', $preference->drink_id)->name}}  --  strength: {{(json_decode($preference->data,true))['strength']}} <br><br>--> 
                         @endforeach
                         <br>
