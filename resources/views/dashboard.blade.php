@@ -63,7 +63,7 @@
                         @foreach ($preferences as $preference)   
                             <!--<p>{{ $preference}}</p>-->
                             {{ Form::checkbox('checkbox' . $preference->id)}} {{ $cups->firstWhere('id', $preference->cup_id)->name}}
-                                        <div class="col-md-3">
+                                        <div class="col-md-8">
                                             <div class="card ">
                                                 <div class="card-header ">
                                                     <h4 class="card-title">{{$cups->firstWhere('id', $preference->cup_id)->name}}</h4>
@@ -84,7 +84,7 @@
                         {{Session::get('message')}}
                         {{ Form::close() }}
                         
-            {{Form::open(['route' => 'deletePrefCup'])}}
+            
            @foreach ($preferences as $preference)
             
             <div class="col-md-3">
@@ -102,7 +102,7 @@
             </div>
             
             @endforeach
-            {{ Form::close() }}
+            
         </div>
     </div>
 @endsection
