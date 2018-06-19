@@ -58,7 +58,7 @@
                 </div>
 
             </div>
-                        YOUR PREFERENCES
+                        YOUR PREFERENCES <br>
                         {{Form::open(['route' => 'deletePrefCup'])}}
                         @foreach ($preferences as $preference)   
                             <!--<p>{{ $preference}}</p>
