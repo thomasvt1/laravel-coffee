@@ -66,7 +66,7 @@
                                         <div class="col-md-8">
                                             <div class="card ">
                                                 <div class="card-header "> 
-                                                    {{ Form::checkbox('checkbox' . $preference->id)}}
+                                                    
                                                     <h4 class="card-title">{{$cups->firstWhere('id', $preference->cup_id)->name}}</h4>
                         
                                                     <p class="card-category"></p>
@@ -74,6 +74,7 @@
                                                 <div class="card-body ">
                                                     preference drink: {{$drinks->firstWhere('id', $preference->drink_id)->name}} <br>
                                                     strength: {{(json_decode($preference->data,true))['strength']}}
+                                                    {{ Form::checkbox('checkbox' . $preference->id)}} Select to delete
                                                 </div>
                                             </div>
                                         </div>
