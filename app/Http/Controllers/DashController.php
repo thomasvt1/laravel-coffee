@@ -61,7 +61,6 @@ class DashController extends Controller
 
     public function update(Request $request)
     {
-        dd($request);
         //of gekozen drank volume <= gekozen cup volume
         //$cup_volume = \App\Cup::where('cup_id', '=', $request->input('cup');
         $time= array();
@@ -83,7 +82,7 @@ class DashController extends Controller
         $drink_volume = \App\Drink::where('id', $request->input('drink'))->value('volume');
         if ($cup_volume >= $drink_volume) {
             
-            if($request->has('startTime') && $request->has('endTime')) {
+            if($request->input('startTime') != null && $request->input('endTime') != null) {
                 if ($request->input('startTime') < $request->input('endTime')){
                     
                     $startTime = $time[$request->input('startTime')];
