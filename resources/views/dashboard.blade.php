@@ -73,7 +73,7 @@
                                                 </div>
                                                 <div class="card-body ">
                                                     preference drink: {{$drinks->firstWhere('id', $preference->drink_id)->name}} <br>
-                                                    strength: {{(json_decode($preference->data,true))['strength']}}
+                                                    strength: {{(json_decode($preference->data,true))['strength']}} <br>
                                                     {{ Form::checkbox('checkbox' . $preference->id)}} Select to delete
                                                 </div>
                                             </div>
