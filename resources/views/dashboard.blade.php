@@ -80,6 +80,21 @@
                     </div>
                 </div>
             </div>
+           @foreach ($user_cups as $cup)
+            
+            <div class="col-md-2">
+                <div class="card ">
+                    <div class="card-header ">
+                        <h4 class="card-title">{{$cup->name}}</h4>
+                        <p class="card-category"></p>
+                    </div>
+                    <div class="card-body ">
+                        Cup content TODO
+                    </div>
+                </div>
+            </div>
+            
+            @endforeach
         </div>
     </div>
 @endsection
