@@ -22,9 +22,9 @@
             <div class="col-md-4">
                 <div class="card ">
                     <div class="card-header ">
-                        <h4 class="card-title" style="color:Tomato">Change preference</h4>
+                        <h4 class="card-title" >Change preference</h4>
                         <p class="card-category">Here it is possible to change your preference</p>
-                        <p class="card-category">Things with a * are required.</p>
+                        <p class="card-category"style="color:Tomato">Things with a * are required.</p>
                     </div>
                     <div class="card-body ">
                            
