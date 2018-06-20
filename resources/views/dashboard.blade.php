@@ -36,7 +36,7 @@
                         {{ Form::select('startTime', $time, null, ['class' => 'form-control','placeholder' => 'Pick a start time']) }}
                         {{ Form::select('endTime', $time, null, ['class' => 'form-control','placeholder' => 'Pick a end time']) }}
                         <br>
-                        Choose the days you want this preference *
+                        Choose the days you want this preference 
                         <br>
                         @foreach ($days as $day)   
                             {{ Form::checkbox('checkbox' . $day) }}
@@ -44,7 +44,7 @@
                             <br> 
                         @endforeach
                         <br>
-                        <p class="card-category">Choose your strength:</p>
+                        <p class="card-category">Choose your strength: *</p>
                         {{ Form::input('range', 'strength') }}
 
                         <br>
