@@ -57,7 +57,7 @@ class CustomizeController extends Controller
     {
         if($request->input('newuid')!= "" && $request->input('newuid') != "" && $request->input('volume') != ""){
             if(strlen($request->input('newuid'))== 8 || strlen($request->input('newuid'))== 6 ){
-                \App\Cup::insert(['user_id' => Auth::user()->id, 'volume' => $request->input('volume'), 'uid' => $request->input('newuid'), 'name' => $request->input('cupname')]);
+                \App\Cup::insert(['user_id' => Auth::user()->id, 'volume' => 400, 'uid' => $request->input('newuid'), 'name' => $request->input('cupname')]);
                 return back()->with('success', 'Preference updated successfully.');
             } else {
                 return back()->with('warning', 'Please enter a valid UID');
