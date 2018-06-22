@@ -53,7 +53,7 @@
                     <div class="card-body ">
                         {{Form::open(['route' => 'addCup'])}}
                           
-                        Name
+                        Name<br>
                         {{ Form::input('text', 'cupname') }}
                         <br>
                         UID<br>
