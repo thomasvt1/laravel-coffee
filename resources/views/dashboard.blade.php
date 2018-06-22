@@ -59,7 +59,7 @@
                 </div>
 
             </div>
-                        
+            <div class="col-md-4">            
                         {{Form::open(['route' => 'deletePrefCup'])}}
                         <div class="card ">
                             <div class="card-header ">
@@ -92,10 +92,7 @@
                         <br>
                         {{Session::get('message')}}
                         {{ Form::close() }}
-                        
-            
-           
-            
+            </div>            
         </div>
     </div>
 @endsection
