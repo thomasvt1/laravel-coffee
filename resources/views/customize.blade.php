@@ -57,7 +57,7 @@
                 </div>
             </div> 
         </div>
-        <div class="col-md-3">
+        <--<div class="col-md-3">-->
                 @foreach ($user_cups as $cup)
                 <!--<div class="col-md-3"> -->
                 <div class="card ">
@@ -68,7 +68,7 @@
                     </div>
                 </div>
                 @endforeach
-            </div>
+        <--</div>-->
     </div>
 </div>
 @endsection
