@@ -61,7 +61,9 @@
             </div>
                         
                         {{Form::open(['route' => 'deletePrefCup'])}}
-                        <h4> YOUR PREFERENCES </h4>
+                        <div class="card ">
+                            <h4 class="card-title">YOUR PREFERENCES</h4>
+                        </div>
                         @foreach ($preferences as $preference)   
                             <!--<p>{{ $preference}}</p>
                             {{ $cups->firstWhere('id', $preference->cup_id)->name}}-->
