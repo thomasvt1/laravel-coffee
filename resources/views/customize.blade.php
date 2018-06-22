@@ -55,7 +55,7 @@
                         Name
                         {{ Form::input('text', 'cupname') }}
                         <br>
-                        Uid
+                        Uid<br>
                         {{ Form::input('text', 'newuid') }}
                         <br><br>
                         {{Form::submit('Submit')}}
