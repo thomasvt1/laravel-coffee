@@ -63,6 +63,8 @@
                         {{Form::open(['route' => 'deletePrefCup'])}}
                         <div class="card ">
                             <h4 class="card-title">YOUR PREFERENCES</h4>
+                            <div class="card-body ">
+                            </div>
                         </div>
                         @foreach ($preferences as $preference)   
                             <!--<p>{{ $preference}}</p>
