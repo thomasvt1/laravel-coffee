@@ -65,8 +65,6 @@
                             <div class="card-header ">
                                 <h4 class="card-title">YOUR PREFERENCES</h4>
                             </div>
-                            <div class="card-body ">
-                            </div>
                         </div>
                         @foreach ($preferences as $preference)   
                             <!--<p>{{ $preference}}</p>
