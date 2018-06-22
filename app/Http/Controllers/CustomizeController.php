@@ -56,8 +56,12 @@ class CustomizeController extends Controller
     public function addCup(Request $request)
     {
         if($request->input('newuid')!= "" && $request->input('newuid') != "" && $request->input('volume') != ""){
-            \App\Cup::insert(['user_id' => Auth::user()->id, 'volume' => $request->input('volume'), 'uid' => $request->input('newuid'), 'name' => $request->input('cupname')]);
-            return back()->with('success', 'Preference updated successfully.');
+            if(strlen($request->input('newuid'))== 8 || strlen($request->input('newuid'))== 6 )
+                \App\Cup::insert(['user_id' => Auth::user()->id, 'volume' => $request->input('volume'), 'uid' => $request->input('newuid'), 'name' => $request->input('cupname')]);
+                return back()->with('success', 'Preference updated successfully.');
+            } else {
+                return back()->with('warning', 'Please enter a valid UID');
+            }
         } else {
             return back()->with('warning', 'Please fill in all fields.');
         }
