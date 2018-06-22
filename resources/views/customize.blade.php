@@ -42,7 +42,7 @@
             </div>
             
             <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="card ">
                     <div class="card-header ">
                         <h4 class="card-title">Add mug</h4>
