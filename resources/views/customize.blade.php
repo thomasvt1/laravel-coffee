@@ -46,9 +46,6 @@
                     <br>
                     UID<br>
                     {{ Form::input('text', 'newuid') }}
-                    <br>
-                    Volume<br>
-                    {{ Form::input('text', 'volume') }}
                     <br><br>
                     {{Form::submit('Submit')}}
                     <br>
