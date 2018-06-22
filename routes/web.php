@@ -13,7 +13,7 @@
 
 Route::get('/', 'DashController@index')->name('Dashboard');
 Route::get('/customize', 'CustomizeController@index')->name('Your Mugs');
-Route::get('/addCup', 'CustomizeController@index')->name('addCup');
+Route::get('/addCup', 'CustomizeController@addCup')->name('addCup');
 
 Auth::routes();
 Route::post('/','DashController@update')->name('updateCup');
