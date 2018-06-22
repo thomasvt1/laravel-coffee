@@ -73,7 +73,7 @@
             
             @foreach ($user_cups as $cup)
             
-            <div class="col-md-3">
+            <!--<div class="col-md-3"> -->
                 <div class="card ">
                     <div class="card-header ">
                         <h4 class="card-title">{{$cup->name}}</h4>
@@ -83,7 +83,7 @@
                         Cup content TODO
                     </div>
                 </div>
-            </div>
+            <!--</div> -->
             
             @endforeach
             
