@@ -56,7 +56,7 @@ class CustomizeController extends Controller
     public function addCup(Request $request)
     {
         if($request->input('newuid')!= "" && $request->input('newuid') != ""){
-            \App\Cup::insert(['user_id' => Auth::user()->id, 'uid' => $request->input('newuid'), 'newname' => $request->input('newname')]);
+            \App\Cup::insert(['user_id' => Auth::user()->id, 'volume' => $request->input('volume'), 'uid' => $request->input('newuid'), 'name' => $request->input('newname')]);
         }
 
     }
