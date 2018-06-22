@@ -41,6 +41,32 @@
                 </div>
             </div>
             
+            <div class="row">
+            <div class="col-md-3">
+                <div class="card ">
+                    <div class="card-header ">
+                        <h4 class="card-title">Add mug</h4>
+                        <p class="card-category">Add a mug to your account</p>
+                    </div>
+                    
+                    <div class="card-body ">
+                        {{Form::open(['route' => 'addCup'])}}
+                          
+                        Name
+                        {{ Form::input('text', 'cupname') }}
+                        <br>
+                        Uid
+                        {{ Form::input('text', 'newuid') }}
+                        <br><br>
+                        {{Form::submit('Submit')}}
+                        <br>
+                        {{Session::get('message')}}
+                        {{ Form::close() }}
+                           
+                    </div>
+                </div>
+            </div>
+            
             @foreach ($user_cups as $cup)
             
             <div class="col-md-2">
