@@ -13,9 +13,10 @@
 
 Route::get('/', 'DashController@index')->name('Dashboard');
 Route::get('/customize', 'CustomizeController@index')->name('Your Mugs');
-Route::get('/addCup', 'CustomizeController@addCup')->name('addCup');
+
 
 Auth::routes();
 Route::post('/','DashController@update')->name('updateCup');
 Route::post('/deletePrefCup','DashController@deletePref')->name('deletePrefCup');
 Route::post('/customize','CustomizeController@update')->name('updateName');
+Route::post('/addCup', 'CustomizeController@addCup')->name('addCup');
