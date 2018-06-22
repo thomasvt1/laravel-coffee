@@ -30,9 +30,9 @@
                           
                         {{ Form::select('cup', $user_cups->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a cup']) }}
                         <br>
-                        Name
+                        Name<br>
                         {{ Form::input('text', 'newname') }}
-                        <br><br><br>
+                        <br><br>
                         {{Form::submit('Submit')}}
                         <br>
                         {{Session::get('message')}}
@@ -70,7 +70,7 @@
             
             @foreach ($user_cups as $cup)
             
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <div class="card ">
                     <div class="card-header ">
                         <h4 class="card-title">{{$cup->name}}</h4>
