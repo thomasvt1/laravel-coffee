@@ -30,8 +30,9 @@
                           
                         {{ Form::select('cup', $user_cups->pluck('name', 'id'), null, ['required', 'class' => 'form-control','placeholder' => 'Pick a cup']) }}
                         <br>
+                        Name
                         {{ Form::input('text', 'newname') }}
-                        <br><br>
+                        <br><br><br>
                         {{Form::submit('Submit')}}
                         <br>
                         {{Session::get('message')}}
@@ -55,7 +56,7 @@
                         Name
                         {{ Form::input('text', 'cupname') }}
                         <br>
-                        Uid<br>
+                        UID<br>
                         {{ Form::input('text', 'newuid') }}
                         <br><br>
                         {{Form::submit('Submit')}}
