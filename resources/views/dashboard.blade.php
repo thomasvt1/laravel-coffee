@@ -62,7 +62,9 @@
                         
                         {{Form::open(['route' => 'deletePrefCup'])}}
                         <div class="card ">
-                            <h4 class="card-title">YOUR PREFERENCES</h4>
+                            <div class="card-header ">
+                                <h4 class="card-title">YOUR PREFERENCES</h4>
+                            </div>
                             <div class="card-body ">
                             </div>
                         </div>
